@@ -1,0 +1,16 @@
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: -15px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-track img {
+    width: 100%;
+    flex-shrink: 0;
+}

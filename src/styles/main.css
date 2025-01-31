@@ -1,0 +1,22 @@
+h1 {
+    text-align: center;
+    color: var(--primaire);
+    font-size: 35px;
+    margin-bottom: 0;
+}
+
+@media (max-width: 989px) {
+    h1 {
+        font-size: 25px;
+    }
+    .branche {
+        width: 309px;
+    }
+}
+
+.branche {
+    display: flex;
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+}

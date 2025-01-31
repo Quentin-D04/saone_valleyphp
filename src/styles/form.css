@@ -1,0 +1,27 @@
+#dispo {
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primaire);
+    color: white;
+    padding: 20px 40px;
+    width: 20%;
+    margin: auto;
+    display: grid;
+    border-radius: 20px;
+    margin-top: 40px;
+}
+
+@media (max-width: 989px) {
+    #dispo {
+        width: 30%;
+    }
+}
+
+#dispo label {
+    text-align: center;
+    margin: auto;
+}
+
+#Date_one {
+    
+}
