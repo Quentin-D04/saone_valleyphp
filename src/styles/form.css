@@ -3,18 +3,18 @@
     align-items: center;
     background-color: var(--primaire);
     color: white;
-    padding: 20px 40px;
+    padding: 40px 40px;
     width: 20%;
     margin: auto;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     border-radius: 20px;
     margin-top: 40px;
+    margin-bottom: 100px;
 }
 
-@media (max-width: 989px) {
-    #dispo {
-        width: 30%;
-    }
+.champs{
+    display: flex;
 }
 
 #dispo label {
@@ -22,6 +22,78 @@
     margin: auto;
 }
 
-#Date_one {
+#Date_one, #Date_two {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    width: 100px;
+}
+
+#adultes, #enfants, #hebergements{
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    width: 100px;
+    margin: auto;
+    display: flex;
+}
+.btn_form  {
+    background-color: var(--secondary);
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    width: 105px;
+    border: none;
+    margin: auto;
+    cursor: pointer;
+}
+
+
+.btn_form {
+    background-color: var(--secondary);
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    width: 120px;
+    border: none;
+}
+
+@media (max-width: 989px) {
+    #dispo {
+        display: grid;
+        width: 50%;
+        padding: 20px 40px;
+    }
+
+    #dispo label {
+        text-align: center;
+        margin: auto;
+    }
     
+    #Date_one, #Date_two {
+        padding: 10px;
+        border-radius: 20px;
+        border: none;
+        width: 100px;
+        margin: auto;
+    }
+    
+    #adultes, #enfants, #hebergements{
+        padding: 10px;
+        border-radius: 20px;
+        border: none;
+        width: 100px;
+        margin: auto;
+    }
+    .btn_form  {
+        background-color: var(--secondary);
+        color: white;
+        padding: 10px;
+        border-radius: 20px;
+        width: 120px;
+        border: none;
+        margin: auto;
+        cursor: pointer;
+        display: grid;
+    }
 }

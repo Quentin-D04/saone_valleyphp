@@ -6,5 +6,7 @@
     <input type="number" id="adultes" name="adultes" placeholder="Adultes"><br>
     <input type="number" id="enfants" name="enfants" placeholder="Enfants"><br>
     <input type="number" id="hebergements" name="hebergements" placeholder="hébergements"><br>
-    <input type="submit" value="Envoyer">
+    <div class="btnform">
+        <input type="submit" value="Envoyer" class="btn_form">
+    </div>
 </form>
