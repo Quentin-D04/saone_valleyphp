@@ -20,3 +20,19 @@ h1 {
     max-width: 100%;
     height: auto;
 }
+
+.h2_accueil {
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media (min-width: 650px) {
+    h1 {
+        font-size: 30px;
+    }
+}
+
+.p_accueil {
+    text-align: center;
+    font-size: 20px;
+}
