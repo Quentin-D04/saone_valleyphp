@@ -16,10 +16,10 @@
     <nav>
       <ul>
         <li class="menu"><a href="index.php">Accueil</a></li>
-        <li class="menu"><a href="index.php#services">Logements</a></li>
-        <li class="menu"><a href="index.php#about">Cartes cadeaux</a></li>
+        <li class="menu"><a href="index.php#logements">Logements</a></li>
+        <li class="menu"><a href="index.php#cartes_cadeaux">Cartes cadeaux</a></li>
         <li class="menu dropdown">
-          <a href="#">Langues</a>
+          <a href="index.php#langues">Langues</a>
           <ul class="submenu">
             <li><a href="index.php#fr"><img src="../assets/img/fr-FR 1.png" alt="drapeau français"></a></li>
             <li><a href="index.php#en"><img src="../assets/img/en-GB 1.png" alt="english flag"></a></li>

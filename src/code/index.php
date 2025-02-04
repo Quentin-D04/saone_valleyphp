@@ -21,12 +21,13 @@
             <input type="submit" value="Envoyer" class="btn_form">
         </div>
     </form>
-    >
     <h2 class="h2_accueil">Vivez des moments inoubliables comme nulle part ailleurs !</h2>
     <p class="p_accueil">Sur plus de 5 hectares, au cœur de la Vallée de la Saône, dans un milieu naturel préservé, en bordure d'un plan d'eau privatif et des eaux enchanteresses de la Saône, le Domaine Saône-Valley vous accueille toute l'année pour vivre des vacances uniques.</p>
     <div class="offres">
         <h2 class="h2_accueil2">offres Spéciales</h2>
         <img src="../assets/img/Capture d'écran 2025-02-03 111130.png" alt="offre spéciale" class="offre">
+        <a class="btn_offre" href="index.php#offres">Découvrir</a>
     </div>
+    <h2>notre confort, nos services</h2>
 </main>
 <?php include 'footer.php'; ?>
