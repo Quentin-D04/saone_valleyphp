@@ -15,6 +15,8 @@
 
 footer {
     background-color: var(--primaire);
+    margin: 0;
+    padding-bottom: 5px;
 }
 
 .icon {
@@ -68,9 +70,56 @@ footer {
     }
 }
 
-.contact {
+.contact, .rgpd {
     color: var(--case);
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 100px;
+    padding-left: 0;
+}
+
+.contact .phone {
+    width: 40px;
+}
+
+.contact .pointer {
+    width: 50px;
+}
+
+.contact .minimail {
+    width: 30px;
+    margin-right: 20px;
+}
+
+.contact a {
+    text-decoration: none;
+    color: var(--case);
+        display: flex;
+    align-items: center;
+}
+
+@media (max-width: 898px) {
+    .contact{
+        gap: 30px;
+    }
+}
+
+@media (max-width: 898px) {
+    .contact , .rgpd{
+        flex-direction: column;
+    }
+    .rgpd {
+        gap: 20px;
+    }
+}
+
+.rgpd a {
+    text-decoration: none;
+    color: var(--case);
+    font-size: 14px;
+}
+
+.rgpd li {
+    text-align: center;
 }
