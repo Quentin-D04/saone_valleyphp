@@ -28,6 +28,23 @@
         <img src="../assets/img/Capture d'écran 2025-02-03 111130.png" alt="offre spéciale" class="offre">
         <a class="btn_offre" href="index.php#offres">Découvrir</a>
     </div>
-    <h2>notre confort, nos services</h2>
+    <h2 class="h2_accueil3">Notre confort, nos services</h2>
+    <div class="options">
+        <ul class="list_op">
+            <li>pêche</li>
+            <li>animaux acceptés</li>
+            <li>aire de jeux</li>
+        </ul>
+        <ul class="list_op">
+            <li>réservation de prestations annexes</li>
+            <li>vue sur rivière ou étang</li>
+            <li>boulodrome</li>
+        </ul>
+        <ul class="list_op">
+            <li>mini golf</li>
+            <li>bar</li>
+            <li>restaurant</li>
+        </ul>
+    </div>
 </main>
 <?php include 'footer.php'; ?>

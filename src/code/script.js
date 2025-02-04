@@ -115,7 +115,7 @@ This code is created to display element's behavior. I'm not a JS expert. So use 
   
         let key = event.which || event.keyCode;
   
-        // remove the listener after click the button if he doesn't push the ESC key
+
         if (menuIsDisplayed === false) {
           document.removeEventListener('keyup', handleEscape);
         } 

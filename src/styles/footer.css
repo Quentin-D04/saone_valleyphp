@@ -1,0 +1,76 @@
+.h2_footer {
+    text-align: center;
+    color: var(--case);
+    margin-top: 20px;
+    margin-bottom: 0;
+    background-color: var(--primaire);
+    padding: 40px;
+}
+
+@media (max-width: 700px) {
+    iframe {
+        height: 250px;
+    }
+}
+
+footer {
+    background-color: var(--primaire);
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+@media (max-width:520px) {
+    .icon {
+        gap: 70px;
+    }
+}
+
+.icon img {
+    width: 30px;
+}
+
+.icon .facebook {
+    width: 40px;
+}
+
+.horaires {
+    color: var(--case);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    margin-left: 90px;
+    font-size: 20px;
+}
+@media (max-width:550px) {
+    .horaires{
+        margin-left: 60px;
+        font-size: 16px;
+    }
+}
+@media (max-width:500px) {
+    .horaires{
+        margin-left: 40px;
+    }
+}
+@media (max-width:400px) {
+    .horaires{
+        margin-left: 30px;
+    }
+}
+@media (max-width:358px) {
+    .horaires{
+        margin-left: 0px;
+    }
+}
+
+.contact {
+    color: var(--case);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

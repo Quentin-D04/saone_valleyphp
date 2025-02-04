@@ -24,7 +24,11 @@ h1 {
 
 .h2_accueil {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 40px;
+}
+
+.h2_accueil3 {
+    text-align: center;
 }
 
 @media (min-width: 650px) {
@@ -38,6 +42,7 @@ h1 {
     font-size: 20px;
     margin-left: 20%;
     margin-right: 20%;
+    margin-bottom: 40px;
 }
 
 @media (max-width: 650px) {
@@ -52,6 +57,7 @@ h1 {
     text-align: center;
     padding-top: 20px;
     color: var(--case);
+    margin-top: 30px;
 }
 
 .offre {
@@ -74,7 +80,8 @@ h1 {
     display: block;
     width: fit-content;
     margin: auto;
-    margin-top: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
     font-family: "Lato", serif;
 }
 
@@ -112,4 +119,37 @@ h1 {
         width: 250px;
         height: 90px;
     }
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 50px;
+    margin-right: 40px;
+}
+
+@media (max-width: 566px) {
+    .options {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 20px;
+        margin-right: 0;
+    }
+}
+
+.list_op {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list_op li {
+    padding: 5px;
 }
