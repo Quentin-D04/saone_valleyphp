@@ -8,7 +8,7 @@
   <title>Domaine Saône Valley</title>
 </head>
 
-<body>
+<body class="restaurant-page">
   <header>
     <div class="logo">
       <a href="index.php"><img src="../assets/img/logo.png" alt="logo de Saône valley"></a>

@@ -1,7 +1,7 @@
-<footer>
-    <h2 class="h2_footer">Notre position</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.6245931427675!2d5.97212767670013!3d47.613988887466796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4792eacdadefe2df%3A0x6b138649125596e5!2sDomaine%20Sa%C3%B4ne-Valley%20Parc%20r%C3%A9sidentiel%20de%20loisirs!5e0!3m2!1sfr!2sfr!4v1738663145275!5m2!1sfr!2sfr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <div class="info_footer">
+<footer class="footer_resto">
+    <h2 class="h2_footer_resto">Notre position</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.6201698035843!2d5.971255076700105!3d47.61407488746096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4792ebdf4eb0c4e1%3A0x68ce1e8a0c4e6527!2sL&#39;%C3%89VASION%20Restaurant!5e0!3m2!1sfr!2sfr!4v1738674982619!5m2!1sfr!2sfr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="info_footer">
         <ul class="icon">
             <li><a href="https://www.instagram.com" target="_blank"><img src="../assets/img/🦆 icon _instagram icon_.svg" alt="logo instagram" class="instagram"></a></li>
             <li><a href="https://www.facebook.com"><img src="../assets/img/Facebook.svg" alt="logo facebook" class="facebook"></a></li>
@@ -21,9 +21,10 @@
             <li><a href="http://" target="_blank">Politique de confidentialité</a></li>
             <li><a href="http://" target="_blank">Préférences cookies</a></li>
         </ul>
-        <p class="copyright">© 2025 Saône Valley. Tous droits réservés.</p>
+        <p class="copyright">© 2023 Saône Valley. Tous droits réservés.</p>
     </div>
 </footer>
 <script src="script.js"></script>
 </body>
+
 </html>

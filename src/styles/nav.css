@@ -285,6 +285,37 @@ RESET
     inset-inline-start: calc(50% - .5em);
     z-index: -1;
   }
+
+  .cdpn-mobile-menu__toggle {
+    --_cdpn-mobile-menu-dot-size: var(--cdpn-mobile-menu-dot-size, 1em);
+    
+    box-sizing: border-box;
+    inline-size: var(--_cdpn-mobile-menu-circle-size);
+    block-size: var(--_cdpn-mobile-menu-circle-height);
+    flex: none;
+  
+    position: relative;
+    isolation: isolate;
+  }
+  
+  .cdpn-mobile-menu__toggle::before {
+    content: "";
+    box-sizing: border-box;
+    font-size: var(--_cdpn-mobile-menu-circle-size);
+    inline-size: var(--_cdpn-mobile-menu-dot-size);
+    block-size: var(--_cdpn-mobile-menu-dot-size);
+    /* border is used for Windows High Contrast mode */
+    border: 1px solid var(--_cdpn-mobile-menu-circle-background-color);
+  
+    background-color: var(--_cdpn-mobile-menu-circle-background-color);
+    border-radius: 50%;
+  
+    position: absolute;
+    inset-block-end: -.5em;
+    inset-inline-start: calc(50% - .5em);
+    z-index: -1;
+  }
+  
   
   .cdpn-mobile-menu__hamburger {
     inset-inline-start: 50%;
@@ -414,4 +445,10 @@ RESET
     .cdpn-mobile-menu {
       display: none;
     }
+  }
+
+  .restaurant-page .cdpn-mobile-menu {
+    --cdpn-mobile-menu-circle-background-color: var(--restaurant); /* Exemple de couleur spécifique pour la page restaurant */
+    --cdpn-mobile-menu-hamburger-background-color: #fff; /* Couleur du hamburger */
+    --cdpn-mobile-menu-link-color: #fff; /* Couleur des liens */
   }

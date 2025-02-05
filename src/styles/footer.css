@@ -16,7 +16,7 @@
 footer {
     background-color: var(--primaire);
     margin: 0;
-    padding-bottom: 5px;
+    padding-bottom: 50px;
 }
 
 .icon {
@@ -122,4 +122,22 @@ footer {
 
 .rgpd li {
     text-align: center;
+}
+
+.copyright {
+    color: var(--case);
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer_resto {
+    background-color: var(--restaurant);
+}
+
+.h2_footer_resto {
+    background-color: var(--restaurant);
+    color: var(--case);
+    padding: 20px;
+    text-align: center;
+    padding-bottom: 0;
 }

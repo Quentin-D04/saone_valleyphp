@@ -153,3 +153,17 @@ h1 {
 .list_op li {
     padding: 5px;
 }
+
+.logo_resto {
+    width: 100%;
+}
+
+.h1_resto {
+    color: var(--texte);
+}
+
+.carte {
+    color: var(--texte);
+    text-decoration: none;
+    margin: auto;
+}
