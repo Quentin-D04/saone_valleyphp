@@ -4,8 +4,8 @@
         <div class="info_footer">
         <ul class="icon">
             <li><a href="https://www.instagram.com" target="_blank"><img src="../assets/img/🦆 icon _instagram icon_.svg" alt="logo instagram" class="instagram"></a></li>
-            <li><a href="https://www.facebook.com"><img src="../assets/img/Facebook.svg" alt="logo facebook" class="facebook"></a></li>
-            <li><a href="mailto:contact@saônevalley.com"><img src="../assets/img/Group.svg" alt="logo mail" class="gmail"></a></li>
+            <li><a href="https://www.facebook.com" target="_blank"><img src="../assets/img/Facebook.svg" alt="logo facebook" class="facebook"></a></li>
+            <li><a href="mailto:contact@saônevalley.com" target="_blank"><img src="../assets/img/Group.svg" alt="logo mail" class="gmail"></a></li>
         </ul>
         <ul class="horaires">
             <li>Lundi<br>Mardi<br>Mercredi<br>Jeudi<br>Vendredi<br>Samedi<br>Dimanche</li>
@@ -14,7 +14,7 @@
         <ul class="contact">
             <li><a href="https://www.google.fr/maps/place/Domaine+Sa%C3%B4ne-Valley+Parc+r%C3%A9sidentiel+de+loisirs/@47.6139889,5.9721277,17z/data=!3m1!4b1!4m6!3m5!1s0x4792eacdadefe2df:0x6b138649125596e5!8m2!3d47.6139853!4d5.9747026!16s%2Fg%2F1tc__dqs?entry=ttu&g_ep=EgoyMDI1MDEwNi4xIKXMDSoASAFQAw%3D%3D" target="_blank"><img class="pointer" src="../assets/img/pointer.svg" alt="location">2 bis Rue de la Poterne, 70360 Traves</a></li>
             <li><a href="tel:+33 7 49 16 85 62" target="_blank"><img class="phone" src="../assets/img/phone.svg" alt="numéro de téléphone">07 49 16 85 62</a></li>
-            <li><a href="mailto:contact@saonevalley.com"><img class="minimail" src="../assets/img/minimail.svg" alt="envoyer un mail">contact@saonevalley.com</a></li>
+            <li><a href="mailto:contact@saonevalley.com" target="_blank"><img class="minimail" src="../assets/img/minimail.svg" alt="envoyer un mail">contact@saonevalley.com</a></li>
         </ul>
         <ul class="rgpd">
             <li><a href="http://" target="_blank">Informations légales</a></li>

@@ -19,7 +19,7 @@
           <a href="#">Découvrir</a>
           <ul class="submenu">
             <li><a href="restaurant.php">Restaurant</a></li>
-            <li><a href="index.php#activite">Activitées nautiques</a></li>
+            <li><a href="activites.php">Activitées nautiques</a></li>
           </ul>
         </li>
         <li class="menu"><a href="index.php#logements">Logements</a></li>
