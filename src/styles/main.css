@@ -269,7 +269,7 @@ h1 {
     border-radius: 20px 20px 0 20px;
 }
 
-.instagram {
+.insta{
     display: flex;
     gap: 10px;
     padding-bottom: 15px;
@@ -313,5 +313,107 @@ h1 {
 .tel, .mailto {
     text-decoration: none;
     color: var(--texte);
+}
+
+.h1_activite {
+    background-color: var(--primaire);
+    color: var(--case);
+    padding: 20px;
+    margin: 0;
+}
+
+.h2_activite {
+    background-color: var(--primaire);
+    color: var(--case);
+    padding-bottom: 20px;
+    margin: 0;
+    text-align: center;
+}
+
+.fullcard {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    color: var(--case);
+    text-align: center;
+    height: fit-content;
+    margin-top: 20px;
+}
+
+.card img {
+    border-radius: 20px 20px 0 0;
+    padding: 0;
+    margin: 0;
+    width: 320px;
+}
+
+.card p {
+    margin: 0;
+    padding: 10px 0;
+    background-color: var(--primaire);
+    width: 320px;
+}
+
+.-card1 {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-color: var(--primaire);
+    border-radius: 0 0 20px 20px;
+    width: 320px;
+    padding: 10px 0 10px 0 ;
+}
+.-card {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-color: var(--primaire);
+    border-radius: 0 0 20px 20px;
+    width: 320px;
+    padding: 30px 0 30px 0;
+}
+@media (max-width: 659px) {
+    .fullcard {
+        flex-direction: column;
+        }
+}
+
+@media (max-width: 400px) {
+    .fullcard {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
+        gap: 20px; /* Espacement entre les cartes */
+    }
+    
+    .card {
+        width: 250px; /* Ajuste la largeur selon ton besoin */
+        display: flex;
+        flex-direction: column;
+        color: var(--case);
+        text-align: center;
+        margin-top: 20px;
+    }
+    .card p {
+        width: 250px;
+    }
+    .card ul {
+        width: 250px;
+    }
+    .card img {
+        width: 250px;
+    }
+}
+@media (max-width: 649px) {
+    .h2_activite {
+        font-size: 20px;
+    }
 }
 

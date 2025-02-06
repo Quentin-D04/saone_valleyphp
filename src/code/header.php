@@ -48,7 +48,7 @@
           </a>
         </li>
         <li>
-          <a href="#" class="js-cdpn-mobile-menu__link uia-control ra-link">
+          <a href="activites.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
             <span class="uia-control__group">Activitées nautiques</span>
           </a>
         </li>
