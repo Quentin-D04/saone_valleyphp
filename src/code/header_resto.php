@@ -19,7 +19,7 @@
           <a href="#">Découvrir</a>
           <ul class="submenu">
             <li><a href="restaurant.php">Restaurant</a></li>
-            <li><a href="activites.php">Activitées nautiques</a></li>
+            <li><a href="nautiques.php">Activitées nautiques</a></li>
           </ul>
         </li>
         <li class="menu"><a href="index.php#logements">Logements</a></li>
@@ -48,7 +48,7 @@
           </a>
         </li>
         <li>
-          <a href="activites.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
+          <a href="nautiques.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
             <span class="uia-control__group">Activitées nautiques</span>
           </a>
         </li>
