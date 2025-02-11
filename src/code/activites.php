@@ -22,6 +22,9 @@ include("config.php");
             <th>Code Postal</th>
             <th>Description</th>
             <th>Image</th>
+            <th>Lien</th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
         </tr>
         <?php
         $requete = "SELECT * FROM activites INNER JOIN type_activites ON activites.idtype_activite = type_activites.idtype_activite";
@@ -36,6 +39,9 @@ include("config.php");
             echo "<td>" . htmlspecialchars($resactivites['cp']) . "</td>";
             echo "<td>" . htmlspecialchars($resactivites['description']) . "</td>";
             echo "<td><img src='../img_activites/" . htmlspecialchars($resactivites['image']) . "' alt='Image de " . htmlspecialchars($resactivites['nom_activite']) . "' width='100'></td>";
+            echo "<td><a href='" . htmlspecialchars($resactivites['lien']) . "' target='_blank'>" . htmlspecialchars($resactivites['lien']) . "</a></td>";
+            echo '<td><a href="modif_activites.php?id=' . htmlspecialchars($resactivites['idactivite']) . '">Modifier</a></td>';
+            echo '<td><a href="supprimer_activite.php?id=' . htmlspecialchars($resactivites['idactivite']) . '" onclick="return confirm(\'Êtes-vous sûr de vouloir supprimer cette activité ?\')">Supprimer</a></td>';
             echo "</tr>";
         }
         ?>
@@ -61,6 +67,7 @@ include("config.php");
         Code Postal: <input type="text" name="cp" required><br><br>
         Description: <input type="text" name="description" required><br><br>
         Image: <input type="file" name="image" required><br><br>
+        Lien: <input type="text" name="lien" required><br><br>
         <input type="submit" name="valid" value="Envoyer">
     </form>
 
@@ -72,20 +79,18 @@ include("config.php");
         $adresse = $_POST['adresse'];
         $cp = $_POST['cp'];
         $description = $_POST['description'];
+        $lien = $_POST['lien'];
 
-        // Gestion du téléchargement de l'image
         $target_dir = "../img_activites/";
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-        // Vérifier si le fichier est une image réelle ou une fausse image
         $check = getimagesize($_FILES["image"]["tmp_name"]);
         if ($check !== false) {
             if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-                $image = basename($_FILES["image"]["name"]); // Nom de l'image
+                $image = basename($_FILES["image"]["name"]);
 
-                // Ajouter en BDD
-                $reqajout = "INSERT INTO activites (nom_activite, idtype_activite, ville, adresse, cp, description, image) VALUES (:nom, :type, :ville, :adresse, :cp, :description, :image)";
+                $reqajout = "INSERT INTO activites (nom_activite, idtype_activite, ville, adresse, cp, description, image, lien) VALUES (:nom, :type, :ville, :adresse, :cp, :description, :image, :lien)";
                 $reqsql = $mysqlClient->prepare($reqajout);
                 $reqsql->bindParam(':nom', $nom, PDO::PARAM_STR);
                 $reqsql->bindParam(':type', $type, PDO::PARAM_INT);
@@ -94,9 +99,10 @@ include("config.php");
                 $reqsql->bindParam(':cp', $cp, PDO::PARAM_STR);
                 $reqsql->bindParam(':description', $description, PDO::PARAM_STR);
                 $reqsql->bindParam(':image', $image, PDO::PARAM_STR);
+                $reqsql->bindParam(':lien', $lien, PDO::PARAM_STR);
                 $reqsql->execute();
                 echo "L'activité a été ajoutée avec succès.";
-                // Redirection après l'insertion
+
                 header("Location: " . $_SERVER['PHP_SELF']);
                 exit();
             } else {

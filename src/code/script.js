@@ -157,8 +157,8 @@ function validateDates() {
     var dateOne = document.getElementById('date_one').value;
     var dateTwo = document.getElementById('date_two').value;
     if (dateOne && dateTwo) {
-        if (dateTwo <= dateOne) {
-            alert("La date de départ doit être après la date d'arrivée.");
+        if (dateTwo < dateOne) {
+            alert("La date de départ doit être égale ou supérieure à la date d'arrivée.");
             return false;
         }
     }
