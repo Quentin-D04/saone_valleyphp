@@ -408,7 +408,7 @@ h1 {
     width: 320px;
     padding: 10px 0 28px 0;
 }
-@media (max-width: 659px) {
+@media (max-width: 999px) {
     .fullcard {
         flex-direction: column;
         }
@@ -462,4 +462,52 @@ h1 {
     .h2_activite {
         font-size: 20px;
     }
+}
+
+#form4 {
+    background-color: var(--primaire);
+    padding: 10px;
+    width: fit-content;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+#form4 select , #form4 input {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+}
+
+.echo {
+    color: var(--case);
+    text-align: center;
+    margin: 20px 0 20px 0;
+}
+
+.h2_activites {
+    color: var(--primaire);
+    padding-top: 20px;
+    margin: 0 0 20px 0 ;
+    text-align: center;
+}
+
+.activites {
+    background-color: var(--primaire);
+    width: 500px;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+.activites img {
+    width: 90%;
+    display: flex;
+    margin: auto;
+    border-radius: 20px;
+    padding: 0;
+    margin-top: 20px;
+    height: 253px;
 }
