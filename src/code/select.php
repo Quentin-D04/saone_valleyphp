@@ -14,6 +14,8 @@ include("config.php");
 <body>
     <h1>Sélection d'un point d'intérêt</h1>
     <form action="" method="GET" id="form4">
+        <input type="date" name="date_one" id="date_one" required>
+        <input type="date" name="date_two" id="date_two" required>
         <select name="activites">
             <option value="">Sélectionnez un point d'intérêt</option>
             <?php
@@ -42,7 +44,7 @@ include("config.php");
             foreach ($activites as $activite) {
                 echo "<div class='activites'>";
                 if (!empty($activite['image'])) {
-                    echo "<img src='../assets/img/" . htmlspecialchars($activite['image']) . "' alt='Image de " . htmlspecialchars($activite['nom_activite']) . "'>";
+                    echo "<img src='../img_activites/" . htmlspecialchars($activite['image']) . "' alt='Image de " . htmlspecialchars($activite['nom_activite']) . "'>";
                 }
                 echo "<p class='echo'>Catégorie : " . htmlspecialchars($activite['nom_type']) . "</p>";
                 echo "<p class='echo'>Nom : " . htmlspecialchars($activite['nom_activite']) . "</p>";
