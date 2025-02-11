@@ -9,12 +9,14 @@ include("config.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Select des activités</title>
     <link rel="stylesheet" href="../styles/style.css">
+    <script src="script.js"></script>
 </head>
-
 <body>
     <h1>Sélection d'un point d'intérêt</h1>
-    <form action="" method="GET" id="form4">
+    <form action="" method="GET" id="form4" onsubmit="return validateDates()">
+        <label for="date_one">Date d'arrivée :</label>
         <input type="date" name="date_one" id="date_one" required>
+        <label for="date_two">Date de départ :</label>
         <input type="date" name="date_two" id="date_two" required>
         <select name="activites">
             <option value="">Sélectionnez un point d'intérêt</option>
@@ -52,6 +54,7 @@ include("config.php");
                 echo "<p class='echo'>Adresse : " . htmlspecialchars($activite['adresse']) . "</p>";
                 echo "<p class='echo'>Code Postal : " . htmlspecialchars($activite['cp']) . "</p>";
                 echo "<p class='echo'>Description : " . htmlspecialchars($activite['description']) . "</p>";
+                echo "<a href='". htmlspecialchars($activite['lien']) ."' target='_blank'>pour en savoir plus</a>";
                 echo "</div>";
             }
         } else {
