@@ -1,5 +1,10 @@
 <?php
-include("config.php");
+session_start();
+if (!isset($_SESSION["admin"])) {
+    header("Location: connexion.php");
+    exit();
+}
+include("../code/bdd.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,8 +45,8 @@ include("config.php");
             echo "<td>" . htmlspecialchars($resactivites['description']) . "</td>";
             echo "<td><img src='../img_activites/" . htmlspecialchars($resactivites['image']) . "' alt='Image de " . htmlspecialchars($resactivites['nom_activite']) . "' width='100'></td>";
             echo "<td><a href='" . htmlspecialchars($resactivites['lien']) . "' target='_blank'>" . htmlspecialchars($resactivites['lien']) . "</a></td>";
-            echo '<td><a href="modif_activites.php?id=' . htmlspecialchars($resactivites['idactivite']) . '">Modifier</a></td>';
-            echo '<td><a href="supprimer_activite.php?id=' . htmlspecialchars($resactivites['idactivite']) . '" onclick="return confirm(\'Êtes-vous sûr de vouloir supprimer cette activité ?\')">Supprimer</a></td>';
+            echo '<td><a href="../code/modif_activites.php?id=' . htmlspecialchars($resactivites['idactivite']) . '">Modifier</a></td>';
+            echo '<td><a href="../code/supprimer_activite.php?id=' . htmlspecialchars($resactivites['idactivite']) . '" onclick="return confirm(\'Êtes-vous sûr de vouloir supprimer cette activité ?\')">Supprimer</a></td>';
             echo "</tr>";
         }
         ?>
@@ -84,35 +89,48 @@ include("config.php");
         $target_dir = "../img_activites/";
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+        $maxFileSize = 500000;
 
         $check = getimagesize($_FILES["image"]["tmp_name"]);
         if ($check !== false) {
-            if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-                $image = basename($_FILES["image"]["name"]);
 
-                $reqajout = "INSERT INTO activites (nom_activite, idtype_activite, ville, adresse, cp, description, image, lien) VALUES (:nom, :type, :ville, :adresse, :cp, :description, :image, :lien)";
-                $reqsql = $mysqlClient->prepare($reqajout);
-                $reqsql->bindParam(':nom', $nom, PDO::PARAM_STR);
-                $reqsql->bindParam(':type', $type, PDO::PARAM_INT);
-                $reqsql->bindParam(':ville', $ville, PDO::PARAM_STR);
-                $reqsql->bindParam(':adresse', $adresse, PDO::PARAM_STR);
-                $reqsql->bindParam(':cp', $cp, PDO::PARAM_STR);
-                $reqsql->bindParam(':description', $description, PDO::PARAM_STR);
-                $reqsql->bindParam(':image', $image, PDO::PARAM_STR);
-                $reqsql->bindParam(':lien', $lien, PDO::PARAM_STR);
-                $reqsql->execute();
-                echo "L'activité a été ajoutée avec succès.";
-
-                header("Location: " . $_SERVER['PHP_SELF']);
-                exit();
+            if ($_FILES["image"]["size"] > $maxFileSize) {
+                echo "Désolé, votre fichier est trop volumineux.";
             } else {
-                echo "Désolé, une erreur s'est produite lors du téléchargement de votre fichier.";
+
+                if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "avif") {
+                    echo "Désolé, seuls les fichiers JPG, JPEG, PNG et AVIF sont autorisés.";
+                } else {
+                    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                        $image = basename($_FILES["image"]["name"]);
+
+                        $reqajout = "INSERT INTO activites (nom_activite, idtype_activite, ville, adresse, cp, description, image, lien) VALUES (:nom, :type, :ville, :adresse, :cp, :description, :image, :lien)";
+                        $reqsql = $mysqlClient->prepare($reqajout);
+                        $reqsql->bindParam(':nom', $nom, PDO::PARAM_STR);
+                        $reqsql->bindParam(':type', $type, PDO::PARAM_INT);
+                        $reqsql->bindParam(':ville', $ville, PDO::PARAM_STR);
+                        $reqsql->bindParam(':adresse', $adresse, PDO::PARAM_STR);
+                        $reqsql->bindParam(':cp', $cp, PDO::PARAM_STR);
+                        $reqsql->bindParam(':description', $description, PDO::PARAM_STR);
+                        $reqsql->bindParam(':image', $image, PDO::PARAM_STR);
+                        $reqsql->bindParam(':lien', $lien, PDO::PARAM_STR);
+                        $reqsql->execute();
+                        echo "L'activité a été ajoutée avec succès.";
+
+                        header("Location: " . $_SERVER['PHP_SELF']);
+                        exit();
+                    } else {
+                        echo "Désolé, une erreur s'est produite lors du téléchargement de votre fichier.";
+                    }
+                }
             }
         } else {
             echo "Le fichier n'est pas une image.";
         }
     }
     ?>
+<a href="dashboard.php">Retourner sur la page Admin</a>
+
 </body>
 
 </html>

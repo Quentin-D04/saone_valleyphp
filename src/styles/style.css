@@ -19,6 +19,8 @@
 
 @import "./footer.css";
 
+@import "./admin.css";
+
 body {
     font-family: playfair display, serif;
     color: var(--primaire);

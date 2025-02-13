@@ -1,18 +1,13 @@
 <?php
+$host = "localhost";
+$dbname = "saone_valley";
+$user = "root";
+$pass = "root";
 
-$base="saone_valley";
-$host="localhost";
-$user="root";
-$pass="root";
-
-try
-{
-// On se connecte à MySQL
-$mysqlClient = new PDO("mysql:host={$host};dbname={$base};", $user, $pass);
-}
-catch(Exception $e)
-{
-// En cas d'erreur, on affiche un message et on arrête tout
-        die('Erreur : '.$e->getMessage());
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Erreur de connexion à la base de données: " . $e->getMessage());
 }
 ?>
