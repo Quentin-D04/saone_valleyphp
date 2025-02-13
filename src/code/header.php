@@ -20,6 +20,7 @@
           <ul class="submenu">
             <li><a href="restaurant.php">Restaurant</a></li>
             <li><a href="nautiques.php">Activitées nautiques</a></li>
+            <li><a href="select.php">Activitées Locales</a></li>
           </ul>
         </li>
         <li class="menu"><a href="index.php#logements">Logements</a></li>
@@ -49,7 +50,12 @@
         </li>
         <li>
           <a href="nautiques.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
-            <span class="uia-control__group">Activitées nautiques</span>
+            <span class="uia-control__group">Activités nautiques</span>
+          </a>
+        </li>
+        <li>
+          <a href="select.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
+            <span class="uia-control__group">Activités Locales</span>
           </a>
         </li>
         <li>

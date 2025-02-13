@@ -1,5 +1,5 @@
 <?php
-include("config.php");
+include("bdd.php");
 
 if (isset($_GET['id'])) {
     $id_activite = $_GET['id'];
@@ -86,19 +86,30 @@ if (isset($_POST['valid'])) {
         $target_dir = "../img_activites/";
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+        $maxFileSize = 500000; // Limite de taille de fichier en octets (500 KB)
 
         $check = getimagesize($_FILES["image"]["tmp_name"]);
         if ($check !== false) {
-            if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-                $image = basename($_FILES["image"]["name"]);
-
-                // Supprimer l'ancienne image
-                if (file_exists($target_dir . $ancienne_image)) {
-                    unlink($target_dir . $ancienne_image);
-                }
+            // Vérifier la taille du fichier
+            if ($_FILES["image"]["size"] > $maxFileSize) {
+                echo "Désolé, votre fichier est trop volumineux.";
             } else {
-                echo "Désolé, une erreur s'est produite lors du téléchargement de votre fichier.";
-                $image = $ancienne_image;
+                // Vérifier les formats de fichier
+                if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "avif") {
+                    echo "Désolé, seuls les fichiers JPG, JPEG, PNG et AVIF sont autorisés.";
+                } else {
+                    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                        $image = basename($_FILES["image"]["name"]);
+
+                        // Supprimer l'ancienne image
+                        if (file_exists($target_dir . $ancienne_image)) {
+                            unlink($target_dir . $ancienne_image);
+                        }
+                    } else {
+                        echo "Désolé, une erreur s'est produite lors du téléchargement de votre fichier.";
+                        $image = $ancienne_image;
+                    }
+                }
             }
         } else {
             echo "Le fichier n'est pas une image.";
@@ -122,7 +133,7 @@ if (isset($_POST['valid'])) {
     $reqsql->execute();
     echo "L'activité a été mise à jour avec succès.";
 
-    header("Location: activites.php");
+    header("Location: ../admin/activites.php");
     exit();
 }
 ?>

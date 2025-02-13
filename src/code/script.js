@@ -135,6 +135,15 @@ This code is created to display element's behavior. I'm not a JS expert. So use 
     jsMenuNode.querySelector(`.${menuClassesNames.toggleClass}`).addEventListener('click', toggleMenu);
   })();
 
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.cdpn-mobile-menu__toggle');
+    const body = document.body;
+
+    menuToggle.addEventListener('click', function() {
+        body.classList.toggle('no-scroll');
+    });
+});
+
 // carousel
   const track = document.querySelector('.carousel-track');
 const slides = Array.from(track.children);

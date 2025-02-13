@@ -1,5 +1,6 @@
 <?php
-include("config.php");
+include("bdd.php");
+include("header.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +13,7 @@ include("config.php");
     <script src="script.js"></script>
 </head>
 <body>
-    <h1>Sélection d'un point d'intérêt</h1>
+    <h1 class="h1_select">Sélection d'un point d'intérêt</h1>
     <form action="" method="GET" id="form4" onsubmit="return validateDates()">
         <label for="date_one">Date d'arrivée :</label>
         <input type="date" name="date_one" id="date_one" required>
@@ -42,7 +43,7 @@ include("config.php");
         $activites = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         if ($activites) {
-            echo "<h2 class='h2_activites'>Détails des activités sélectionnées :</h2>";
+            echo "<h2 class='h2_select'>Détails des activités sélectionnées :</h2>";
             foreach ($activites as $activite) {
                 echo "<div class='activites'>";
                 if (!empty($activite['image'])) {
@@ -61,6 +62,7 @@ include("config.php");
             echo "<p>Aucune activité trouvée.</p>";
         }
     }
+    include("footer.php");
     ?>
 </body>
 

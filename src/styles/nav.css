@@ -452,3 +452,7 @@ RESET
     --cdpn-mobile-menu-hamburger-background-color: #fff; /* Couleur du hamburger */
     --cdpn-mobile-menu-link-color: #fff; /* Couleur des liens */
   }
+
+  .no-scroll {
+    overflow: hidden;
+}

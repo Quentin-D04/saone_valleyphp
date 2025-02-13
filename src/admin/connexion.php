@@ -29,8 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Connexion Admin</title>
 </head>
 <body>
-    <h2>Connexion Admin</h2>
-    <form method="POST">
+    <h2 align="center">Connexion Admin</h2>
+    <form method="POST" align="center">
         <label for="username">Nom d'utilisateur :</label>
         <input type="text" id="username" name="username" required>
         <br>
