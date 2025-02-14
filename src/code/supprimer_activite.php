@@ -29,7 +29,7 @@ if (isset($_GET['id'])) {
     exit();
 } else {
     echo "ID d'activité non spécifié.";
-    header("Location: activites.php");
+    header("Location: ../admin/activites.php");
     exit();
 }
 ?>

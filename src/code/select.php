@@ -2,16 +2,6 @@
 include("bdd.php");
 include("header.php");
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select des activités</title>
-    <link rel="stylesheet" href="../styles/style.css">
-    <script src="script.js"></script>
-</head>
 <body>
     <h1 class="h1_select">Sélection d'un point d'intérêt</h1>
     <form action="" method="GET" id="form4" onsubmit="return validateDates()">
@@ -64,6 +54,3 @@ include("header.php");
     }
     include("footer.php");
     ?>
-</body>
-
-</html>
