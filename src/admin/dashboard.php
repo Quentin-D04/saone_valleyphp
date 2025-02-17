@@ -21,6 +21,7 @@ if (!isset($_SESSION["admin"])) {
     <h2>Bienvenue sur le tableau de bord, <?php echo $_SESSION["admin"]; ?> !</h2>
     <nav>
         <ul>
+            <li><a href="ajout_carte.php">Ajouter des cartes de menu</a></li>
             <li><a href="activites.php">Ajouter des activités</a></li>
             <li><a href="inscription.php">Ajouter un utilisateur</a></li>
             <li><a href="logout.php">Déconnexion</a></li>
