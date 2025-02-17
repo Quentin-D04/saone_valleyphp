@@ -27,16 +27,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion Admin</title>
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
-    <h2 align="center">Connexion Admin</h2>
-    <form method="POST" align="center">
+    <h2 align="center">Connexion à votre espace personnalisé</h2>
+    <form class="admin" method="POST" align="center">
         <label for="username">Nom d'utilisateur :</label>
         <input type="text" id="username" name="username" required>
-        <br>
+        <br><br>
         <label for="password">Mot de passe :</label>
         <input type="password" id="password" name="password" required>
-        <br>
+        <br><br>
         <button type="submit">Se connecter</button>
     </form>
 </body>

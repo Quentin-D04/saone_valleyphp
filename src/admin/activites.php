@@ -13,12 +13,27 @@ include("../code/bdd.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste des activités</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <script src="../code/script.js" defer></script>
 </head>
 
 <body>
     <h1>Liste des activités</h1>
 
-    <table border="1" class="table">
+    <label for="typeFilter" class="filter">Filtrer par type d'activité :</label>
+    <select id="typeFilter" onchange="filterActivities()">
+        <option value="all">Tous</option>
+        <?php
+        $requete = "SELECT DISTINCT nom_type FROM type_activites";
+        $reqsql = $mysqlClient->prepare($requete);
+        $reqsql->execute();
+        while ($restype = $reqsql->fetch(PDO::FETCH_ASSOC)) {
+            echo "<option value='" . htmlspecialchars($restype['nom_type']) . "'>" . htmlspecialchars($restype['nom_type']) . "</option>";
+        }
+        ?>
+    </select><br><br>
+
+    <table border="1" class="table2">
         <tr>
             <th>Nom de l'activité</th>
             <th>Type d'activité</th>
@@ -36,9 +51,9 @@ include("../code/bdd.php");
         $reqsql = $mysqlClient->prepare($requete);
         $reqsql->execute();
         while ($resactivites = $reqsql->fetch(PDO::FETCH_ASSOC)) {
-            echo "<tr>";
+            echo "<tr class='activity-row'>";
             echo "<td>" . htmlspecialchars($resactivites['nom_activite']) . "</td>";
-            echo "<td>" . htmlspecialchars($resactivites['nom_type']) . "</td>";
+            echo "<td class='activity-type'>" . htmlspecialchars($resactivites['nom_type']) . "</td>";
             echo "<td>" . htmlspecialchars($resactivites['ville']) . "</td>";
             echo "<td>" . htmlspecialchars($resactivites['adresse']) . "</td>";
             echo "<td>" . htmlspecialchars($resactivites['cp']) . "</td>";

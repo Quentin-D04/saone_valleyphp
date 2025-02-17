@@ -173,3 +173,20 @@ function validateDates() {
     }
     return true;
 }
+
+function filterActivities() {
+  var select = document.getElementById("typeFilter");
+  var selectedType = select.value;
+  var rows = document.querySelectorAll(".activity-row");
+
+  rows.forEach(function(row) {
+      var typeCell = row.querySelector(".activity-type");
+      if (selectedType === "all") {
+          row.style.backgroundColor = ""; // Ne pas changer la couleur si "Tous" est sélectionné
+      } else if (typeCell.textContent === selectedType) {
+          row.style.backgroundColor = "var(--secondary)"; // Changer la couleur en vert clair pour les activités correspondantes
+      } else {
+          row.style.backgroundColor = ""; // Réinitialiser la couleur pour les autres activités
+      }
+  });
+}
