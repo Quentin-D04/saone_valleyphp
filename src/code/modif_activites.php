@@ -4,7 +4,7 @@ include("bdd.php");
 if (isset($_GET['id'])) {
     $id_activite = $_GET['id'];
 
-    // Vérifier que cet ID correspond bien à une activité
+
     $requete = "SELECT * FROM activites WHERE idactivite = :id";
     $reqsql = $mysqlClient->prepare($requete);
     $reqsql->bindParam(':id', $id_activite, PDO::PARAM_INT);
@@ -12,7 +12,7 @@ if (isset($_GET['id'])) {
     $resactivite = $reqsql->fetch(PDO::FETCH_ASSOC);
 
     if ($resactivite) {
-        // Afficher le formulaire prérempli
+
         ?>
         <!DOCTYPE html>
         <html lang="en">
@@ -20,10 +20,11 @@ if (isset($_GET['id'])) {
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Modifier une activité</title>
+            <link rel="stylesheet" href="../styles/style.css">
         </head>
         <body>
-            <h1>Modifier une activité</h1>
-            <form method="post" action="" enctype="multipart/form-data">
+            <h1 class="modif">Modifier une activité</h1>
+            <form method="post" action="" enctype="multipart/form-data" class="admin">
                 <label for="type">Type d'activité:</label>
                 <select name="type" id="type">
                     <?php
@@ -52,7 +53,8 @@ if (isset($_GET['id'])) {
                 <label for="lien">Lien:</label>
                 <input type="text" name="lien" id="lien" value="<?php echo htmlspecialchars($resactivite['lien']); ?>"><br><br>
                 <input type="hidden" name="idactivite" value="<?php echo htmlspecialchars($resactivite['idactivite']); ?>">
-                <input type="submit" name="valid" value="Envoyer">
+                <input type="submit" name="valid" value="Envoyer" id="valid_modif">
+                <a class="annuler" href="../admin/activites.php">Annuler</a>
             </form>
         </body>
         </html>
@@ -74,7 +76,7 @@ if (isset($_POST['valid'])) {
     $description = $_POST['description'];
     $lien = $_POST['lien'];
 
-    // Récupérer l'ancienne image
+
     $requete = "SELECT image FROM activites WHERE idactivite = :id";
     $reqsql = $mysqlClient->prepare($requete);
     $reqsql->bindParam(':id', $id_activite, PDO::PARAM_INT);
@@ -86,15 +88,15 @@ if (isset($_POST['valid'])) {
         $target_dir = "../img_activites/";
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-        $maxFileSize = 500000; // Limite de taille de fichier en octets (500 KB)
+        $maxFileSize = 500000;
 
         $check = getimagesize($_FILES["image"]["tmp_name"]);
         if ($check !== false) {
-            // Vérifier la taille du fichier
+
             if ($_FILES["image"]["size"] > $maxFileSize) {
                 echo "Désolé, votre fichier est trop volumineux.";
             } else {
-                // Vérifier les formats de fichier
+
                 if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "avif") {
                     echo "Désolé, seuls les fichiers JPG, JPEG, PNG et AVIF sont autorisés.";
                 } else {

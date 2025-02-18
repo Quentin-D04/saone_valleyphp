@@ -32,7 +32,7 @@ include("../code/bdd.php");
         }
         ?>
     </select><br><br>
-
+    <a class="retour" href="dashboard.php">Retourner sur la page Admin</a><br><br>
     <table border="1" class="table2">
         <tr>
             <th>Nom de l'activité</th>
@@ -67,8 +67,8 @@ include("../code/bdd.php");
         ?>
     </table>
 
-    <h2>Ajouter une activité</h2>
-    <form method="post" action="" enctype="multipart/form-data">
+    <h2 class="h2_admin">Ajouter une activité</h2>
+    <form method="post" action="" enctype="multipart/form-data" class="form_admin">
         Nom de l'activité: <input type="text" name="nom" required><br><br>
         Type d'activité:
         <select name="type">
@@ -88,7 +88,7 @@ include("../code/bdd.php");
         Description: <input type="text" name="description" required><br><br>
         Image: <input type="file" name="image" required><br><br>
         Lien: <input type="text" name="lien" required><br><br>
-        <input type="submit" name="valid" value="Envoyer">
+        <input type="submit" name="valid" value="Envoyer" id="valid">
     </form>
 
     <?php
@@ -144,8 +144,6 @@ include("../code/bdd.php");
         }
     }
     ?>
-<a href="dashboard.php">Retourner sur la page Admin</a>
-
 </body>
 
 </html>

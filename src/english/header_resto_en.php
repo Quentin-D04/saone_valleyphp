@@ -1,35 +1,35 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../styles/style.css" />
-  <title>Domaine Saône Valley</title>
+  <title>Saône Valley Domain</title>
 </head>
 
 <body class="restaurant-page">
   <header>
     <div class="logo">
-      <a href="index.php"><img src="../assets/img/logo.png" alt="logo de Saône valley"></a>
+      <a href="index_en.php"><img src="../assets/img/logo.png" alt="Saône Valley logo"></a>
     </div>
     <nav>
       <ul>
-      <li class="menu dropdown">
-          <a href="#">Découvrir</a>
+        <li class="menu dropdown">
+          <a href="#">Discover</a>
           <ul class="submenu">
-            <li><a href="restaurant.php">Restaurant</a></li>
-            <li><a href="nautiques.php">Activitées nautiques</a></li>
-            <li><a href="select.php">Activitées Locales</a></li>
+            <li><a href="restaurant_en.php">Restaurant</a></li>
+            <li><a href="nautiques.php">Water Activities</a></li>
+            <li><a href="select.php">Local Activities</a></li>
           </ul>
         </li>
-        <li class="menu"><a href="index.php#logements">Logements</a></li>
-        <li class="menu"><a href="index.php#cartes_cadeaux">Cartes cadeaux</a></li>
+        <li class="menu"><a href="index.php#logements">Accommodations</a></li>
+        <li class="menu"><a href="index.php#cartes_cadeaux">Gift Cards</a></li>
         <li class="menu dropdown">
-          <a href="#">Langues</a>
+          <a href="#">Languages</a>
           <ul class="submenu">
-            <li><a href="index.php"><img src="../assets/img/fr-FR 1.png" alt="drapeau français"></a></li>
-            <li><a href="../english/index_en.php"><img src="../assets/img/en-GB 1.png" alt="english flag"></a></li>
+            <li><a href="../code/index.php"><img src="../assets/img/fr-FR 1.png" alt="French flag"></a></li>
+            <li><a href="index_en.php"><img src="../assets/img/en-GB 1.png" alt="English flag"></a></li>
           </ul>
         </li>
       </ul>
@@ -39,43 +39,44 @@
     <div id="cdpn-mobile-menu" class="cdpn-mobile-menu__container">
       <ul class="cdpn-mobile-menu__list ra-list">
         <li>
-          <a href="index.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
-            <span class="uia-control__group">Accueil</span>
+          <a href="index_en.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
+            <span class="uia-control__group">Home</span>
           </a>
         </li>
         <li>
-          <a href="restaurant.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
-            <span class="uia-control__group">restaurant</span>
+          <a href="restaurant_en.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
+            <span class="uia-control__group">Restaurant</span>
           </a>
         </li>
         <li>
           <a href="nautiques.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
-            <span class="uia-control__group">Activitées nautiques</span>
+            <span class="uia-control__group">Water Activities</span>
           </a>
         </li>
         <li>
           <a href="select.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
-            <span class="uia-control__group">Activités Locales</span>
+            <span class="uia-control__group">Local Activities</span>
           </a>
         </li>
         <li>
           <a href="#0" class="js-cdpn-mobile-menu__link uia-control ra-link">
-            <span class="uia-control__group">Logements</span>
+            <span class="uia-control__group">Accommodations</span>
           </a>
         </li>
         <li>
           <a href="#0" class="cdpn-mobile-menu__link uia-control ra-link">
-            <span class="uia-control__group">Cartes Cadeaux</span>
+            <span class="uia-control__group">Gift Cards</span>
           </a>
         </li>
         <li>
-          <a href="index.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
-            <span class="uia-control__group"><img src="../assets/img/fr-FR 1.png" alt=""></span>
+          <a href="../code/index.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
+            <span class="uia-control__group"><img src="../assets/img/fr-FR 1.png" alt="French flag"></span>
           </a>
         </li>
         <li>
-          <a href="../english/index_en.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
-            <span class="uia-control__group"><img src="../assets/img/en-GB 1.png" alt=""></a>
+          <a href="index_en.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
+            <span class="uia-control__group"><img src="../assets/img/en-GB 1.png" alt="English flag"></span>
+          </a>
         </li>
       </ul>
     </div>
@@ -91,3 +92,5 @@
       </span>
     </button>
   </nav>
+</body>
+</html>

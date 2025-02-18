@@ -21,7 +21,7 @@
             <li><a href="http://" target="_blank">Politique de confidentialité</a></li>
             <li><a href="http://" target="_blank">Préférences cookies</a></li>
         </ul>
-        <p class="copyright">© 2023 Saône Valley. Tous droits réservés.</p>
+        <p class="copyright">© 2025 Saône Valley. Tous droits réservés.</p>
     </div>
 </footer>
 <script src="script.js"></script>
