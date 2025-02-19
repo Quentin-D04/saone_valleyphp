@@ -1,6 +1,6 @@
 <?php include 'header.php' ?>
 <main>
-    <h1 class="h1_activite">Tarifs Acivitées Nautiques</h1>
+    <h1 class="h1_activite">Tarifs Acivités Nautiques</h1>
     <h2 class="h2_activite">Profitez de l’eau autrement : pêche et navigation au programme de vos escapades</h2>
     <div class="fullcard">
         <div class="card">
@@ -16,7 +16,7 @@
         </div>
         <div class="card">
             <img src="../assets/img//canoës 5 (1).jpg" alt="">
-            <p>Bateax sans permis<br>(hors location de chalets)</p>
+            <p>Bateaux sans permis<br>(hors location de chalets)</p>
             <ul class="-card">
                 <li>30.00€ : 2 heures</li>
                 <li>45.00€ : 4 heures</li>
@@ -33,7 +33,7 @@
             </ul>
         </div>
     </div>
-    <h1 class="h1_activite">Tarifs Acivitées Nautiques</h1>
+    <h1 class="h1_activite">Tarifs Acivités Nautiques</h1>
     <h2 class="h2_activite"> Posez l'ancre au Domaine Saône-Valley, sur nos nouveaux pontons, et profitez du calme.<br>(Moins de 3 heures : 3.00€)</h2>
     <div class="fullcard">
         <div class="card1">

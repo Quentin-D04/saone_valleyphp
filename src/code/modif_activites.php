@@ -4,7 +4,6 @@ include("bdd.php");
 if (isset($_GET['id'])) {
     $id_activite = $_GET['id'];
 
-
     $requete = "SELECT * FROM activites WHERE idactivite = :id";
     $reqsql = $mysqlClient->prepare($requete);
     $reqsql->bindParam(':id', $id_activite, PDO::PARAM_INT);
@@ -12,7 +11,6 @@ if (isset($_GET['id'])) {
     $resactivite = $reqsql->fetch(PDO::FETCH_ASSOC);
 
     if ($resactivite) {
-
         ?>
         <!DOCTYPE html>
         <html lang="en">
@@ -48,6 +46,8 @@ if (isset($_GET['id'])) {
                 <input type="text" name="cp" id="cp" value="<?php echo htmlspecialchars($resactivite['cp']); ?>" required><br><br>
                 <label for="description">Description:</label>
                 <input type="text" name="description" id="description" value="<?php echo htmlspecialchars($resactivite['description']); ?>" required><br><br>
+                <label for="description_en">Description (English):</label>
+                <input type="text" name="description_en" id="description_en" value="<?php echo htmlspecialchars($resactivite['description_en']); ?>" required><br><br>
                 <label for="image">Image:</label>
                 <input type="file" name="image" id="image"><br><br>
                 <label for="lien">Lien:</label>
@@ -74,8 +74,8 @@ if (isset($_POST['valid'])) {
     $adresse = $_POST['adresse'];
     $cp = $_POST['cp'];
     $description = $_POST['description'];
+    $description_en = $_POST['description_en'];
     $lien = $_POST['lien'];
-
 
     $requete = "SELECT image FROM activites WHERE idactivite = :id";
     $reqsql = $mysqlClient->prepare($requete);
@@ -121,7 +121,7 @@ if (isset($_POST['valid'])) {
         $image = $ancienne_image;
     }
 
-    $requete = "UPDATE activites SET nom_activite = :nom, idtype_activite = :type, ville = :ville, adresse = :adresse, cp = :cp, description = :description, image = :image, lien = :lien WHERE idactivite = :idactivite";
+    $requete = "UPDATE activites SET nom_activite = :nom, idtype_activite = :type, ville = :ville, adresse = :adresse, cp = :cp, description = :description, description_en = :description_en, image = :image, lien = :lien WHERE idactivite = :idactivite";
     $reqsql = $mysqlClient->prepare($requete);
     $reqsql->bindParam(':nom', $nom, PDO::PARAM_STR);
     $reqsql->bindParam(':type', $type, PDO::PARAM_INT);
@@ -129,6 +129,7 @@ if (isset($_POST['valid'])) {
     $reqsql->bindParam(':adresse', $adresse, PDO::PARAM_STR);
     $reqsql->bindParam(':cp', $cp, PDO::PARAM_STR);
     $reqsql->bindParam(':description', $description, PDO::PARAM_STR);
+    $reqsql->bindParam(':description_en', $description_en, PDO::PARAM_STR);
     $reqsql->bindParam(':image', $image, PDO::PARAM_STR);
     $reqsql->bindParam(':lien', $lien, PDO::PARAM_STR);
     $reqsql->bindParam(':idactivite', $id_activite, PDO::PARAM_INT);

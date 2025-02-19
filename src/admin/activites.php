@@ -41,6 +41,7 @@ include("../code/bdd.php");
             <th>Adresse</th>
             <th>Code Postal</th>
             <th>Description</th>
+            <th>Description Anglaise</th>
             <th>Image</th>
             <th>Lien</th>
             <th>Modifier</th>
@@ -58,6 +59,7 @@ include("../code/bdd.php");
             echo "<td>" . htmlspecialchars($resactivites['adresse']) . "</td>";
             echo "<td>" . htmlspecialchars($resactivites['cp']) . "</td>";
             echo "<td>" . htmlspecialchars($resactivites['description']) . "</td>";
+            echo "<td>" . htmlspecialchars($resactivites['description_en']) . "</td>";
             echo "<td><img src='../img_activites/" . htmlspecialchars($resactivites['image']) . "' alt='Image de " . htmlspecialchars($resactivites['nom_activite']) . "' width='100'></td>";
             echo "<td><a href='" . htmlspecialchars($resactivites['lien']) . "' target='_blank'>" . htmlspecialchars($resactivites['lien']) . "</a></td>";
             echo '<td><a href="../code/modif_activites.php?id=' . htmlspecialchars($resactivites['idactivite']) . '">Modifier</a></td>';

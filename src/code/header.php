@@ -18,7 +18,7 @@
       <li class="menu dropdown">
           <a href="#">Découvrir</a>
           <ul class="submenu">
-            <li><a href="restaurant.php">Restaurant</a></li>
+            <li><a href="./restaurant.php">Restaurant</a></li>
             <li><a href="nautiques.php">Activitées nautiques</a></li>
             <li><a href="select.php">Activitées Locales</a></li>
           </ul>

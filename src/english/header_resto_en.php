@@ -19,11 +19,11 @@
           <a href="#">Discover</a>
           <ul class="submenu">
             <li><a href="restaurant_en.php">Restaurant</a></li>
-            <li><a href="nautiques.php">Water Activities</a></li>
-            <li><a href="select.php">Local Activities</a></li>
+            <li><a href="nautiques_en.php">Water Activities</a></li>
+            <li><a href="select_en.php">Local Activities</a></li>
           </ul>
         </li>
-        <li class="menu"><a href="index.php#logements">Accommodations</a></li>
+        <li class="menu"><a href="index.php#logements">Housing</a></li>
         <li class="menu"><a href="index.php#cartes_cadeaux">Gift Cards</a></li>
         <li class="menu dropdown">
           <a href="#">Languages</a>
@@ -49,7 +49,7 @@
           </a>
         </li>
         <li>
-          <a href="nautiques.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
+          <a href="nautiques_en.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
             <span class="uia-control__group">Water Activities</span>
           </a>
         </li>
@@ -60,7 +60,7 @@
         </li>
         <li>
           <a href="#0" class="js-cdpn-mobile-menu__link uia-control ra-link">
-            <span class="uia-control__group">Accommodations</span>
+            <span class="uia-control__group">Housing</span>
           </a>
         </li>
         <li>
