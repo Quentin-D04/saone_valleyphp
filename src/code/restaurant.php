@@ -1,14 +1,28 @@
-<?php include 'bdd.php';   
+<?php 
+include '../code/bdd.php';   
 include 'header_resto.php';
-    $requete = "SELECT * FROM restaurant";
-    $reqsql = $mysqlClient->prepare($requete);
-    $reqsql->execute();
-    $carte = $reqsql->fetch(PDO::FETCH_ASSOC);
+
+// Requête pour récupérer les informations du restaurant
+$query = "SELECT * FROM restaurant LIMIT 1"; 
+$reqsql = $mysqlClient->prepare($query);
+$reqsql->execute();
+$menu = $reqsql->fetch(PDO::FETCH_ASSOC);
+
+// Vérification des clés
+$carteLangue = isset($menu['langue']) ? $menu['langue'] : '';
+$carteFichier = isset($menu['carte']) ? $menu['carte'] : '';
+
 ?>
+
 <main>
-    <img src="../assets/img/logo_resto.jpg" alt="logo restaurant l'évasion" class="logo_resto">
+    <img src="../assets/img/logo_resto.jpg" alt="Logo du restaurant L'Évasion" class="logo_resto">
     <h1 class="h1_resto">Venez découvrir le nouveau Bar - Restaurant L'ÉVASION du Domaine Saône-Valley !</h1>
-    <a class="carte" href="../img_cartes/<?php echo htmlspecialchars($carte['carte']); ?>" download="carte.pdf">Télécharger le PDF</a>
+
+    <?php if ($carteLangue === 'français' && !empty($carteFichier)) : ?>
+        <a class="carte" href="../img_cartes/<?php echo htmlspecialchars($carteFichier); ?>" download="carte_fr.pdf">
+           Télécharger la carte
+        </a>
+    <?php endif; ?>
     <div class="horaires-container">
         <span class="line"></span>
         <div class="title-container">
