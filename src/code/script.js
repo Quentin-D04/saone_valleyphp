@@ -190,3 +190,9 @@ function filterActivities() {
       }
   });
 }
+
+window.onload = function() {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', '<?php echo $url; ?>', true);
+  xhr.send();
+};

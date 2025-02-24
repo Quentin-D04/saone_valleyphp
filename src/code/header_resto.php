@@ -11,7 +11,7 @@
 <body class="restaurant-page">
   <header>
     <div class="logo">
-      <a href="index.php"><img src="../assets/img/logo.png" alt="logo de Saône valley"></a>
+      <a href="chargement_site.php?type=accueil"><img src="../assets/img/logo.png" alt="logo de Saône valley"></a>
     </div>
     <nav>
       <ul>
@@ -39,7 +39,7 @@
     <div id="cdpn-mobile-menu" class="cdpn-mobile-menu__container">
       <ul class="cdpn-mobile-menu__list ra-list">
         <li>
-          <a href="index.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
+          <a href="chargement_site.php?type=accueil" class="js-cdpn-mobile-menu__link uia-control ra-link">
             <span class="uia-control__group">Accueil</span>
           </a>
         </li>

@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if ($user && $username === "Saone_valley" && password_verify($password, $user['password'])) {
         $_SESSION["admin"] = $username;
-        header("Location: dashboard.php");
+        header("Location: ../code/chargement.php");
         exit();
     } else {
         echo "Erreur : Seul l'administrateur peut se connecter.";

@@ -38,8 +38,8 @@ include("../code/bdd.php");
         }
         ?>
     </table>
-    <h2>Ajouter des cartes</h2>
-    <form method="post" action="" enctype="multipart/form-data">
+    <h2 class="h2_carte">Ajouter des cartes</h2>
+    <form method="post" action="" enctype="multipart/form-data" class="form_type">
         Cartes: <input type="file" name="cartes[]" accept=".pdf" multiple required><br><br>
         Langue: 
         <select name="langue" required>

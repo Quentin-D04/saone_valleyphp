@@ -11,19 +11,19 @@
 <body>
   <header>
     <div class="logo">
-      <a href="index.php"><img src="../assets/img/logo.png" alt="logo de Saône valley"></a>
+      <a href="chargement_site.php?type=accueil"><img src="../assets/img/logo.png" alt="logo de Saône valley"></a>
     </div>
     <nav>
       <ul>
       <li class="menu dropdown">
           <a href="#">Découvrir</a>
           <ul class="submenu">
-            <li><a href="./restaurant.php">Restaurant</a></li>
-            <li><a href="nautiques.php">Activitées nautiques</a></li>
-            <li><a href="select.php">Activitées Locales</a></li>
+            <li><a href="chargement_site.php?type=restaurant">Restaurant</a></li>
+            <li><a href="chargement_site.php?type=nautiques">Activitées nautiques</a></li>
+            <li><a href="chargement_site.php?type=select">Activitées Locales</a></li>
           </ul>
         </li>
-        <li class="menu"><a href="index.php#logements">Logements</a></li>
+        <li class="menu"><a href="chargement_site.php?type=logements">Logements</a></li>
         <li class="menu"><a href="index.php#cartes_cadeaux">Cartes cadeaux</a></li>
         <li class="menu dropdown">
           <a href="#">Langues</a>
@@ -39,27 +39,27 @@
     <div id="cdpn-mobile-menu" class="cdpn-mobile-menu__container">
       <ul class="cdpn-mobile-menu__list ra-list">
         <li>
-          <a href="index.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
+          <a href="chargement_site.php?type=accueil" class="js-cdpn-mobile-menu__link uia-control ra-link">
             <span class="uia-control__group">Accueil</span>
           </a>
         </li>
         <li>
-          <a href="restaurant.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
+          <a href="chargement_site.php?type=restaurant" class="js-cdpn-mobile-menu__link uia-control ra-link">
             <span class="uia-control__group">restaurant</span>
           </a>
         </li>
         <li>
-          <a href="nautiques.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
+          <a href="chargement_site.php?type=nautiques" class="js-cdpn-mobile-menu__link uia-control ra-link">
             <span class="uia-control__group">Activités nautiques</span>
           </a>
         </li>
         <li>
-          <a href="select.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
+          <a href="chargement_site.php?type=select" class="js-cdpn-mobile-menu__link uia-control ra-link">
             <span class="uia-control__group">Activités Locales</span>
           </a>
         </li>
         <li>
-          <a href="#0" class="js-cdpn-mobile-menu__link uia-control ra-link">
+          <a href="chargement_site.php?type=logements" class="js-cdpn-mobile-menu__link uia-control ra-link">
             <span class="uia-control__group">Logements</span>
           </a>
         </li>

@@ -652,7 +652,7 @@ label {
         padding: 10px;
     }
 
-    a{
+    a {
         text-decoration: none;
     }
 }
@@ -666,10 +666,12 @@ label {
     td {
         padding: 10px;
     }
+
     tr:hover {
         background-color: #efecec;
     }
-    a{
+
+    a {
         text-decoration: none;
     }
 }
@@ -692,8 +694,8 @@ label {
         border-radius: 20px;
         padding: 5px;
     }
-    
-    #valid{
+
+    #valid {
         background-color: var(--secondary);
         color: var(--case);
         padding: 10px;
@@ -727,20 +729,22 @@ label {
         border-radius: 20px;
         padding: 5px;
     }
-    
+
 
 }
-    #valid_modif{
-        background-color: var(--secondary);
-        color: var(--case);
-        padding: 10px;
-        border-radius: 20px;
-        border: none;
-        cursor: pointer;
-        width: 200px;
-        display: flex;
-        margin: auto;
-    }
+
+#valid_modif {
+    background-color: var(--secondary);
+    color: var(--case);
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    display: flex;
+    margin: auto;
+}
+
 .modif {
     margin-bottom: 20px;
 }
@@ -795,7 +799,7 @@ label {
         padding: 10px;
     }
 
-    a{
+    a {
         text-decoration: none;
     }
 }
@@ -803,4 +807,45 @@ label {
 .h2_type {
     text-align: center;
     margin-bottom: 20px;
+}
+
+.logements {
+    background-color: var(--case);
+    margin: 30px;
+    padding: 20px;
+}
+
+.toplogement {
+    display: flex;
+}
+
+.prix_condition {
+    display: flex;
+}
+
+.img_logement {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+    img {
+        border-radius: 20px;
+    }
+
+    h2 {
+        display: flex;
+        margin: 0;
+        font-size: 30px;
+    }
+}
+
+.h2_carte {
+
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+.admin_logo {
+    margin: 20px;
 }
