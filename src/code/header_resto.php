@@ -18,12 +18,12 @@
       <li class="menu dropdown">
           <a href="#">Découvrir</a>
           <ul class="submenu">
-            <li><a href="restaurant.php">Restaurant</a></li>
-            <li><a href="nautiques.php">Activitées nautiques</a></li>
-            <li><a href="select.php">Activitées Locales</a></li>
+            <li><a href="chargement_site.php?type=restaurant">Restaurant</a></li>
+            <li><a href="chargement_site.php?type=nautiques">Activitées nautiques</a></li>
+            <li><a href="chargement_site.php?type=select">Activitées Locales</a></li>
           </ul>
         </li>
-        <li class="menu"><a href="index.php#logements">Logements</a></li>
+        <li class="menu"><a href="chargement_site.php?type=logements">Logements</a></li>
         <li class="menu"><a href="index.php#cartes_cadeaux">Cartes cadeaux</a></li>
         <li class="menu dropdown">
           <a href="#">Langues</a>

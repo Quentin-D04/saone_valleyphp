@@ -11,16 +11,16 @@
 <body class="restaurant-page">
   <header>
     <div class="logo">
-      <a href="index_en.php"><img src="../assets/img/logo.png" alt="Saône Valley logo"></a>
+      <a href="../code/chargement_site.php?type=home"><img src="../assets/img/logo.png" alt="Saône Valley logo"></a>
     </div>
     <nav>
       <ul>
         <li class="menu dropdown">
           <a href="#">Discover</a>
           <ul class="submenu">
-            <li><a href="restaurant_en.php">Restaurant</a></li>
-            <li><a href="nautiques_en.php">Water Activities</a></li>
-            <li><a href="select_en.php">Local Activities</a></li>
+            <li><a href="../code/chargement_site.php?type=restaurant_en">Restaurant</a></li>
+            <li><a href="../code/chargement_site.php?type=nautiques_en">Water Activities</a></li>
+            <li><a href="../code/chargement_site.php?type=select_en">Local Activities</a></li>
           </ul>
         </li>
         <li class="menu"><a href="index.php#logements">Housing</a></li>
