@@ -39,22 +39,22 @@
     <div id="cdpn-mobile-menu" class="cdpn-mobile-menu__container">
       <ul class="cdpn-mobile-menu__list ra-list">
         <li>
-          <a href="index_en.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
+          <a href="../code/chargement_site.php?type=home" class="js-cdpn-mobile-menu__link uia-control ra-link">
             <span class="uia-control__group">Home</span>
           </a>
         </li>
         <li>
-          <a href="restaurant_en.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
+          <a href="../code/chargement_site.php?type=restaurant_en" class="js-cdpn-mobile-menu__link uia-control ra-link">
             <span class="uia-control__group">Restaurant</span>
           </a>
         </li>
         <li>
-          <a href="nautiques_en.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
+          <a href="../code/chargement_site.php?type=nautiques_en" class="js-cdpn-mobile-menu__link uia-control ra-link">
             <span class="uia-control__group">Water Activities</span>
           </a>
         </li>
         <li>
-          <a href="select.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
+          <a href="../code/chargement_site.php?type=select_en" class="js-cdpn-mobile-menu__link uia-control ra-link">
             <span class="uia-control__group">Local Activities</span>
           </a>
         </li>
@@ -69,12 +69,12 @@
           </a>
         </li>
         <li>
-          <a href="../code/index.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
+          <a href="../code/chargement_site.php?type=accueil" class="js-cdpn-mobile-menu__link uia-control ra-link">
             <span class="uia-control__group"><img src="../assets/img/fr-FR 1.png" alt="French flag"></span>
           </a>
         </li>
         <li>
-          <a href="index_en.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
+          <a href="../code/chargement_site.php?type=home" class="js-cdpn-mobile-menu__link uia-control ra-link">
             <span class="uia-control__group"><img src="../assets/img/en-GB 1.png" alt="English flag"></span>
           </a>
         </li>

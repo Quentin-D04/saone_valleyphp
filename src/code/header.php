@@ -28,8 +28,8 @@
         <li class="menu dropdown">
           <a href="#">Langues</a>
           <ul class="submenu">
-            <li><a href="index.php"><img src="../assets/img/fr-FR 1.png" alt="drapeau français"></a></li>
-            <li><a href="../english/index_en.php"><img src="../assets/img/en-GB 1.png" alt="english flag"></a></li>
+            <li><a href="chargement_site.php?type=accueil"><img src="../assets/img/fr-FR 1.png" alt="drapeau français"></a></li>
+            <li><a href="chargement_site.php?type=home"><img src="../assets/img/en-GB 1.png" alt="english flag"></a></li>
           </ul>
         </li>
       </ul>

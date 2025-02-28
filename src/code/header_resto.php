@@ -28,8 +28,8 @@
         <li class="menu dropdown">
           <a href="#">Langues</a>
           <ul class="submenu">
-            <li><a href="index.php"><img src="../assets/img/fr-FR 1.png" alt="drapeau français"></a></li>
-            <li><a href="../english/index_en.php"><img src="../assets/img/en-GB 1.png" alt="english flag"></a></li>
+            <li><a href="chargement_site.php?type=accueil"><img src="../assets/img/fr-FR 1.png" alt="drapeau français"></a></li>
+            <li><a href="chargements_site.php?type=home"><img src="../assets/img/en-GB 1.png" alt="english flag"></a></li>
           </ul>
         </li>
       </ul>
@@ -44,22 +44,22 @@
           </a>
         </li>
         <li>
-          <a href="restaurant.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
+          <a href="chargement_site.php?type=restaurant" class="js-cdpn-mobile-menu__link uia-control ra-link">
             <span class="uia-control__group">restaurant</span>
           </a>
         </li>
         <li>
-          <a href="nautiques.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
+          <a href="chargement_site.php?type=nautiques" class="js-cdpn-mobile-menu__link uia-control ra-link">
             <span class="uia-control__group">Activitées nautiques</span>
           </a>
         </li>
         <li>
-          <a href="select.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
+          <a href="chargement_site.php?type=select" class="js-cdpn-mobile-menu__link uia-control ra-link">
             <span class="uia-control__group">Activités Locales</span>
           </a>
         </li>
         <li>
-          <a href="#0" class="js-cdpn-mobile-menu__link uia-control ra-link">
+          <a href="chargement_site.php?type=logements" class="js-cdpn-mobile-menu__link uia-control ra-link">
             <span class="uia-control__group">Logements</span>
           </a>
         </li>
@@ -69,12 +69,12 @@
           </a>
         </li>
         <li>
-          <a href="index.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
+          <a href="chargement_site.php?type=accueil" class="js-cdpn-mobile-menu__link uia-control ra-link">
             <span class="uia-control__group"><img src="../assets/img/fr-FR 1.png" alt=""></span>
           </a>
         </li>
         <li>
-          <a href="../english/index_en.php" class="js-cdpn-mobile-menu__link uia-control ra-link">
+          <a href="chargement_site.php?type=home" class="js-cdpn-mobile-menu__link uia-control ra-link">
             <span class="uia-control__group"><img src="../assets/img/en-GB 1.png" alt=""></a>
         </li>
       </ul>
