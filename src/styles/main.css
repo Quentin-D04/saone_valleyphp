@@ -813,6 +813,7 @@ label {
     background-color: var(--case);
     margin: 30px;
     padding: 20px;
+    border-radius: 20px
 }
 
 .toplogement {
@@ -821,7 +822,19 @@ label {
 
 .prix_condition {
     display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: 0;
+    text-align: center;
+
+    .type_prix, a {
+        margin: 0;
+    }
+
+
 }
+
 
 .img_logement {
     display: flex;
@@ -848,4 +861,92 @@ label {
 
 .admin_logo {
     margin: 20px;
+}
+
+.conditions {
+    display: block;
+    z-index: 100;
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    background-color: var(--background);
+    padding: 20px;
+    border-radius: 20px;
+    width: 300px;
+    height: fit-content;
+    opacity: 1;
+    box-shadow: 5px 5px 15px rgb(57, 57, 57);
+}
+
+.conditions.display_none {
+    display: none;
+}
+
+.descr {
+    width: 60%;
+    text-align: center;
+    border-top: 1px solid black;
+    padding-top: 30px;
+}
+
+.popup {
+    text-decoration: underline;
+    color: var(--secondary);
+    cursor: pointer;
+    z-index: 4;
+}
+
+.background_popup {
+    background-color: black;
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    height: max-content;
+    inset: 0;
+    opacity: 0.8;
+}
+
+.voir_plus{
+    margin-top: 0;
+    color: var(--secondary);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.contenant{
+    width: 60%;
+    border-top: 1px solid black;
+    margin-top: 10px;
+    border-bottom: 1px solid black;
+}
+
+.img_descr {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 50%;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+
+.img_descr img {
+    width: 100%;
+}
+
+.reservation {
+    display: flex;
+    text-decoration: none;
+    color: var(--background);
+    background-color: var(--secondary);
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 17px;
+    width: fit-content;
+    margin: auto;
+    margin-top: 20px;
+}
+
+
+.deroule.displaynone {
+    display: none;
 }
