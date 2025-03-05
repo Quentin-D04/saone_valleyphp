@@ -7,17 +7,20 @@ function offre(element) {
   console.log(condition);
 
   if (condition.classList.contains("display_none")) {
-    condition.classList.remove("display_none"); // Affiche la section
+    condition.classList.remove("display_none");
   } else {
-    condition.classList.add("display_none"); // Cache la section
+    condition.classList.add("display_none");
   }
 
-  const body = document.body;
-  body.addEventListener("click", function (event) {
-    console.log('clikkkk');
-});
 
-};
+  let fermerElements = condition.getElementsByClassName("fermer");
+
+  for (let i = 0; i < fermerElements.length; i++) {
+    fermerElements[i].addEventListener("click", function () {
+      condition.classList.add("display_none");
+    });
+  }
+}
 
 
 
@@ -33,7 +36,6 @@ function voirplus(element) {
   }
   
 }
-
 
 window.onload = function () {
   var xhr = new XMLHttpRequest();

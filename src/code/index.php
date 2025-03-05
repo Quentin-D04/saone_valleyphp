@@ -47,5 +47,4 @@
         </ul>
     </div>
 </main>
-<script src="carousel.js"></script>
 <?php include 'footer.php'; ?>

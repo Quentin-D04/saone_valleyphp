@@ -105,18 +105,19 @@ if ($chalets) {
         echo '<section class="logements">
         <div class="toplogement">
             <div class="img_logement">
-                <img src="../img_chalets/' . htmlspecialchars($chalet['image0']) . '" alt="">
+                <img class="image0" src="../img_chalets/' . htmlspecialchars($chalet['image0']) . '" alt="">
                 <div class="voir">
                     <h2>' . htmlspecialchars($chalet['nom']) . '</h2>
-                    <p onclick="voirplus('.($index).')" class="voir_plus">Voir en détail</p>
+                    <p onclick="voirplus(' . ($index) . ')" class="voir_plus">Voir en détail</p>
                 </div>
             </div>
             <div class="prix_condition">
                 <p>À partir de ' . htmlspecialchars($chalet['prix']) . '€/nuit</p>
                 <p class="type_prix">Prix standard</p>
-                <p onclick="offre('.($index).')" class="popup">Offre annulable sous conditions</p>
+                <p onclick="offre(' . ($index) . ')" class="popup">Offre annulable sous conditions</p>
                 <div id="condition_' . ($index) . '" class="conditions display_none">
                 <p>De 15 à 30 jours avant l\'arrivée, 30% du montant de la réservation vous sera facturé à titre de frais d’annulation De 3 à 14 jours avant l\'arrivée, 50% du montant de la réservation vous sera facturé à titre de frais d’annulation No show, 100% du montant de la réservation vous sera facturé à titre de frais d’annulation À 2 jours de l\'arrivée, 100% du montant de la réservation vous sera facturé à titre de frais d’annulation</p>
+                <p class="fermer">fermer</p>
                 </div>
             </div>
         </div>
@@ -141,7 +142,9 @@ if ($chalets) {
 
 
 if (isset($_SESSION["admin"])) {
-    echo '<h2 class="h2_admin">Ajouter un chalet</h2>
+    echo '<div class="forms">
+    <div class ="titre_form">
+    <h2 class="h2_admin">Ajouter un chalet</h2>
     <form method="post" action="" enctype="multipart/form-data" class="form_admin">
         Nom du chalet:* <input type="text" name="nom" required><br><br>
         Prix:* <input type="number" name="prix" required><br><br>
@@ -156,8 +159,68 @@ if (isset($_SESSION["admin"])) {
         Description: <textarea name="description" rows="5" cols="33" placeholder="1 lit double, wifi..." required></textarea><br><br>
         <input type="submit" name="valid" value="Envoyer">
         <a href="../admin/dashboard.php">Annuler</a>
-    </form><br><br>';
+    </form><br><br>
+    </div>';
 }
 
+if (isset($_SESSION["admin"])) {
+    echo '<div class="titre_form">
+    <h2 class="h2_admin">Supprimer un chalet</h2>
+    <form method="post" action="" class="form_admin">
+        <select name="nom" required>
+            <option value="">Sélectionnez un chalet</option>';
+
+    // Récupérer la liste des chalets depuis la base de données
+    try {
+        $stmt = $mysqlClient->query("SELECT nom FROM chalets ORDER BY nom ASC");
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo '<option value="' . htmlspecialchars($row['nom']) . '">' . htmlspecialchars($row['nom']) . '</option>';
+        }
+    } catch (PDOException $e) {
+        echo "<p style='color:red;'>Erreur lors de la récupération des chalets : " . $e->getMessage() . "</p>";
+    }
+
+    echo '</select><br><br>
+        <input type="submit" name="delete" value="Supprimer">
+        <a href="../admin/dashboard.php">Annuler</a>
+    </form><br><br>
+    </div>
+    </div>';
+
+    if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['delete'])) {
+        $nom = trim($_POST['nom']);
+
+        if (!empty($nom)) {
+            try {
+                // Récupération des images pour suppression des fichiers
+                $stmtImages = $mysqlClient->prepare("SELECT image0, image1, image2, image3, image4, image5, image6 FROM chalets WHERE nom = :nom");
+                $stmtImages->execute([':nom' => $nom]);
+                $images = $stmtImages->fetch(PDO::FETCH_ASSOC);
+
+                // Suppression des fichiers image
+                foreach ($images as $image) {
+                    if ($image && file_exists("../img_chalets/" . $image)) {
+                        unlink("../img_chalets/" . $image);
+                    }
+                }
+
+                // Suppression du chalet dans la base
+                $deleteQuery = "DELETE FROM chalets WHERE nom = :nom";
+                $stmtDelete = $mysqlClient->prepare($deleteQuery);
+                $stmtDelete->execute([':nom' => $nom]);
+
+                echo "<p style='color:green;'>Le chalet a été supprimé avec succès.</p>";
+
+                // Redirection pour éviter la resoumission
+                header("Location: " . $_SERVER['PHP_SELF']);
+                exit();
+            } catch (PDOException $e) {
+                echo "<p style='color:red;'>Erreur lors de la suppression : " . $e->getMessage() . "</p>";
+            }
+        } else {
+            echo "<p style='color:red;'>Veuillez sélectionner un chalet.</p>";
+        }
+    }
+}
 include 'footer.php';
 ?>

@@ -931,7 +931,7 @@ label {
 }
 
 .img_descr img {
-    width: 100%;
+    width: 295px;
     height: 134px;
 }
 
@@ -952,3 +952,22 @@ label {
 .deroule.displaynone {
     display: none;
 }
+
+.fermer {
+    color: var(--secondary);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.forms {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 200px;
+}
+
+.titre_form {
+    display: flex;
+    flex-direction: column;
+}
+
