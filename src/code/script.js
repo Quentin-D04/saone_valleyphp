@@ -1,31 +1,38 @@
-const affiche = document.getElementById("condition");
-const cadre = document.querySelector(".popup");
-cadre.addEventListener("click", function (event) {
-  console.log(affiche);
-  affiche.classList.toggle("display_none");
-  affiche.innerHTML =
-    "<p>De 15 à 30 jours avant l'arrivée, 30% du montant de la réservation vous sera facturé à titre de frais d’annulation De 3 à 14 jours avant l'arrivée, 50% du montant de la réservation vous sera facturé à titre de frais d’annulation No show, 100% du montant de la réservation vous sera facturé à titre de frais d’annulation À 2 jours de l'arrivée, 100% du montant de la réservation vous sera facturé à titre de frais d’annulation</p>";
-    event.stopPropagation();
-});
+// const affiche = document.getElementById("condition");
+// const cadre = document.querySelector(".popup");
+function offre(element) {
+  console.log(element);
 
-const body = document.body;
-body.addEventListener("click", function (event) {
-  if (!affiche.classList.contains("display_none")) {
-    affiche.classList.toggle("display_none");
+  let condition = document.getElementById("condition_" + element);
+  console.log(condition);
+
+  if (condition.classList.contains("display_none")) {
+    condition.classList.remove("display_none"); // Affiche la section
+  } else {
+    condition.classList.add("display_none"); // Cache la section
   }
-  event.stopPropagation();
+
+  const body = document.body;
+  body.addEventListener("click", function (event) {
+    console.log('clikkkk');
 });
 
-const accordeon = document.getElementById("voir_plus");
-const deroule = document.querySelector(".deroule");
-accordeon.addEventListener("click", function (event){
-  console.log(accordeon);
-  deroule.classList.toggle("displaynone");
-event.stopPropagation();
-console.log(deroule);
+};
 
-});
 
+
+function voirplus(element) {
+  console.log(element);
+  let chalet = document.getElementById("chalet_" + element);
+  console.log(chalet);
+
+  if (chalet.classList.contains("displaynone")) {
+    chalet.classList.remove("displaynone"); // Affiche la section
+  } else {
+    chalet.classList.add("displaynone"); // Cache la section
+  }
+  
+}
 
 
 window.onload = function () {
@@ -198,26 +205,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// carousel
-const track = document.querySelector(".carousel-track");
-const slides = Array.from(track.children);
-let currentIndex = 0;
-
-function moveToSlide(index) {
-  const slideWidth = slides[0].getBoundingClientRect().width;
-  track.style.transform = `translateX(-${index * slideWidth}px)`;
-}
-
-function autoSlide() {
-  currentIndex = (currentIndex + 1) % slides.length;
-  moveToSlide(currentIndex);
-}
-
-setInterval(autoSlide, 6000);
-
 function validateDates() {
-  var dateOne = document.getElementById("date_one").value;
-  var dateTwo = document.getElementById("date_two").value;
+  const dateOne = document.getElementById("date_one").value;
+  const dateTwo = document.getElementById("date_two").value;
   if (dateOne && dateTwo) {
     if (dateTwo < dateOne) {
       alert(
@@ -230,18 +220,18 @@ function validateDates() {
 }
 
 function filterActivities() {
-  var select = document.getElementById("typeFilter");
-  var selectedType = select.value;
-  var rows = document.querySelectorAll(".activity-row");
+  const select = document.getElementById("typeFilter");
+  const selectedType = select.value;
+  const rows = document.querySelectorAll(".activity-row");
 
   rows.forEach(function (row) {
-    var typeCell = row.querySelector(".activity-type");
+    const typeCell = row.querySelector(".activity-type");
     if (selectedType === "all") {
-      row.style.backgroundColor = ""; // Ne pas changer la couleur si "Tous" est sélectionné
+      row.style.backgroundColor = "";
     } else if (typeCell.textContent === selectedType) {
-      row.style.backgroundColor = "var(--secondary)"; // Changer la couleur en vert clair pour les activités correspondantes
+      row.style.backgroundColor = "var(--secondary)";
     } else {
-      row.style.backgroundColor = ""; // Réinitialiser la couleur pour les autres activités
+      row.style.backgroundColor = "";
     }
   });
 }
