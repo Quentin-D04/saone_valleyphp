@@ -828,7 +828,8 @@ label {
     margin-right: 0;
     text-align: center;
 
-    .type_prix, a {
+    .type_prix,
+    a {
         margin: 0;
     }
 
@@ -906,14 +907,14 @@ label {
     opacity: 0.8;
 }
 
-.voir_plus{
+.voir_plus {
     margin-top: 0;
     color: var(--secondary);
     text-decoration: underline;
     cursor: pointer;
 }
 
-.contenant{
+.contenant {
     width: 60%;
     border-top: 1px solid black;
     margin-top: 10px;
@@ -954,8 +955,12 @@ label {
 }
 
 .fermer {
-    color: var(--secondary);
-    text-decoration: underline;
+    color: var(--background);
+    background-color: var(--secondary);
+    width: fit-content;
+    margin: auto;
+    padding: 5px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
@@ -971,3 +976,145 @@ label {
     flex-direction: column;
 }
 
+@media (max-width: 768px) {
+    .logements {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .toplogement {
+        flex-direction: column;
+    }
+
+    .prix_condition {
+        margin-top: 20px;
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .voir_plus {
+        text-align: center;
+    }
+
+    .img_logement {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .img_logement img {
+        width: 100%;
+    }
+
+    .img_logement h2 {
+        font-size: 24px;
+    }
+
+    .descr {
+        width: 90%;
+        margin: auto;
+    }
+
+    .img_descr {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .img_descr img {
+        width: 100%;
+        height: auto;
+    }
+
+    .contenant {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logements {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .prix_condition {
+        margin-top: 10px;
+    }
+
+    .img_logement h2 {
+        font-size: 20px;
+    }
+
+    .voir_plus {
+        text-align: center;
+    }
+
+    .descr {
+        padding-top: 20px;
+        margin: auto;
+    }
+
+    .contenant {
+        padding: 5px;
+    }
+}
+
+
+.containerss {
+    max-width: 400px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background: var(--primaire);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    h1, h2 {
+        color: var(--background);
+    }
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    color: var(--background);
+    text-align: center;
+}
+input {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 200px;
+}
+
+input,
+.btn_res {
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: none;
+}
+
+.btn_res {
+    background: #677D38;
+    color: #fff;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.btn_res:hover {
+    background: #677D38;
+}
+
+.cart {
+    margin-top: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    color: var(--background);
+    margin-bottom: 20px;
+}

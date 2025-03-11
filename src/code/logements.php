@@ -135,7 +135,7 @@ if ($chalets) {
             </div>
         </div>
         <p class="descr">' . htmlspecialchars($chalet['description']) . '</p>
-        <a class="reservation" href="reservation.php?type=lodge">Réservez</a>
+        <a class="reservation" href="reservation.php?chalet='. htmlspecialchars($chalet['id_chalet']) .'">Réservez</a>
     </section>';
     }
 }
@@ -146,7 +146,7 @@ if (isset($_SESSION["admin"])) {
     <div class ="titre_form">
     <h2 class="h2_admin">Ajouter un chalet</h2>
     <form method="post" action="" enctype="multipart/form-data" class="form_admin">
-        Nom du chalet:* <input type="text" name="nom" required><br><br>
+        Nom du chalet:* <input type="text" name="nom" placeholder="mettre les espaces avec _" required ><br><br>
         Prix:* <input type="number" name="prix" required><br><br>
         Contenu:* <textarea name="contenu" rows="5" cols="33" placeholder="chalet au bord de la saône..." required></textarea><br><br>
         Image de produit :* <input type="file" name="image0" required><br><br>

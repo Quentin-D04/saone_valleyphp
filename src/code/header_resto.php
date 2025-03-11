@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../styles/style.css" />
   <title>Domaine Saône Valley</title>
+  <script src="menu.js"></script>
+  <script src="script.js"></script>
 </head>
 
 <body class="restaurant-page">
