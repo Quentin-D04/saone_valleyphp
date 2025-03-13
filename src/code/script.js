@@ -81,7 +81,7 @@ function filterActivities() {
     if (selectedType === "all") {
       row.style.backgroundColor = "";
     } else if (typeCell.textContent === selectedType) {
-      row.style.backgroundColor = "var(--secondary)";
+      row.style.backgroundColor = "var(--actif)";
     } else {
       row.style.backgroundColor = "";
     }

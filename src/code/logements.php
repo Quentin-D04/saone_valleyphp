@@ -131,7 +131,7 @@ if ($chalets) {
             </div>
         </div>
         <p class="descr">' . htmlspecialchars($chalet['description']) . '</p>
-        <a class="reservation" href="reservation.php?chalet='. htmlspecialchars($chalet['id_chalet']) .'">Réservez</a>
+        <a class="reservation" href="reservation.php?chalet='. htmlspecialchars($chalet['id_chalet']) .'">Réserver</a>
     </section>';
     }
 }

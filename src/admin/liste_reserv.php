@@ -38,8 +38,10 @@ include("../code/bdd.php");
             echo "<td>" . htmlspecialchars($resreservation['start_date']) . "</td>";
             echo "<td>" . htmlspecialchars($resreservation['end_date']) . "</td>";
             echo "<td>" . htmlspecialchars($resreservation['total_price']) . "</td>";
-            echo '<td><a href="../code/supprimer_activite.php?id=' . htmlspecialchars($resreservation['id']) . '" onclick="return confirm(\'Êtes-vous sûr de vouloir supprimer cette activité ?\')">Supprimer</a></td>';
+            echo '<td><a href="supprimer_reservation.php?id=' . htmlspecialchars($resreservation['id']) . '" onclick="return confirm(\'Êtes-vous sûr de vouloir supprimer cette réservation ?\')">Supprimer</a></td>';
             echo "</tr>";
         }
         ?>
     </table>
+</body>
+</html>
