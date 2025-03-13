@@ -24,9 +24,9 @@ if (!isset($_SESSION["admin"])) {
         <ul class="dashboard">
             <li class="dash"><a href="ajout_carte.php">Ajouter des cartes de menu</a></li>
             <li class="dash"><a href="activites.php">Ajouter des activités</a></li>
-            <li class="dash"><a href="inscription.php">Ajouter un utilisateur</a></li>
-            <li class="dash"><a href="ajout_type.php">ajout type activité</a></li>
-            <li class="dash"><a href="../code/logements.php">ajouter des logements</a></li>
+            <li class="dash"><a href="ajout_type.php">Ajout type activité</a></li>
+            <li class="dash"><a href="../code/logements.php">Ajouter des logements</a></li>
+            <li class="dash"><a href="liste_reserv.php">Voir la liste des réservations</a></li>
             <li class="dash"><a href="logout.php">Déconnexion</a></li>
         </ul>
     </nav>

@@ -49,8 +49,8 @@
 
 
 .btn_form {
-    background-color: var(--secondary);
-    color: white;
+    background-color: var(--actif);
+    color: var(--primaire);
     padding: 10px;
     border-radius: 20px;
     width: 120px;
@@ -85,8 +85,6 @@
         margin: auto;
     }
     .btn_form  {
-        background-color: var(--secondary);
-        color: white;
         padding: 10px;
         border-radius: 20px;
         width: 120px;

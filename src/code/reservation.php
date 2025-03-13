@@ -40,7 +40,7 @@ include 'header.php';
             <label for="time">Heure d'arrivée:</label>
             <input type="time" id="time" required>
             <label for="guests">Nombre de personnes :</label>
-            <input type="number" id="guests" min="1" required><br>
+            <input type="number" id="guests" min="1" required>
             <button class="btn_res" type="button" onclick="addToCart()">Ajouter au panier</button>
         </form>
         <div class="cart">
@@ -99,8 +99,8 @@ include 'header.php';
             itemDiv.className = 'cart-item';
             itemDiv.innerHTML = `
                 <span>${item.name} - ${item.startDate} au ${item.endDate} à ${item.time} (${item.guests} pers) - ${item.totalPrix} €</span>
-                <button class="btn_res" onclick="editReservation(${index})">Modifier</button>
-                <button class="btn_res" onclick="removeFromCart(${index})">Supprimer</button>
+                <button onclick="editReservation(${index})">Modifier</button>
+                <button onclick="removeFromCart(${index})">Supprimer</button>
             `;
             cartItems.appendChild(itemDiv);
         });

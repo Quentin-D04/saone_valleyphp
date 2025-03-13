@@ -20,7 +20,7 @@ include("header.php");
             }
             ?>
         </select>
-        <input type="submit" value="Valider">
+        <input class="val" type="submit" value="Valider">
     </form>
 
     <script>
@@ -52,7 +52,7 @@ include("header.php");
                 echo "<p class='echo'>Ville : " . htmlspecialchars($activite['ville']) . "</p>";
                 echo "<p class='echo'>Adresse : " . htmlspecialchars($activite['adresse']) . "</p>";
                 echo "<p class='echo'>Code Postal : " . htmlspecialchars($activite['cp']) . "</p>";
-                echo "<p class='echo'>Description : " . htmlspecialchars($activite['description']) . "</p>";
+                echo "<p class='echo'>Description :<br> " . htmlspecialchars($activite['description']) . "</p>";
                 echo "<a href='". htmlspecialchars($activite['lien']) ."' target='_blank'>pour en savoir plus</a>";
                 echo "</div>";
             }

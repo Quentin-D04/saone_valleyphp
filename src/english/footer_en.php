@@ -24,6 +24,6 @@
         <p class="copyright">© 2025 Saône Valley. All rights reserved.</p>
     </div>
 </footer>
-<script src="../code/script.js"></script>
+<script src="../code/carousel.js" defer></script>
 </body>
 </html>

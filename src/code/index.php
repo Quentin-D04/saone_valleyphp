@@ -16,7 +16,7 @@
         <input type="date" id="Date_two" name="Date_two" required><br>
         <input type="number" id="adultes" name="adultes" placeholder="Adultes" required><br>
         <input type="number" id="enfants" name="enfants" placeholder="Enfants" required><br>
-        <input type="number" id="hebergements" name="hebergements" placeholder="hébergements" required><br>
+        <input type="number" id="hebergements" name="hebergements" placeholder="Logements" required><br>
         <div class="btnform">
             <input type="submit" value="Envoyer" class="btn_form">
         </div>
@@ -31,19 +31,19 @@
     <h2 class="h2_accueil3">Notre confort, nos services</h2>
     <div class="options">
         <ul class="list_op">
-            <li>pêche</li>
-            <li>animaux acceptés</li>
-            <li>aire de jeux</li>
+            <li>Pêche</li>
+            <li>Animaux acceptés</li>
+            <li>Aire de jeux</li>
         </ul>
         <ul class="list_op">
-            <li>réservation de prestations annexes</li>
-            <li>vue sur rivière ou étang</li>
-            <li>boulodrome</li>
+            <li>Réservation de prestations annexes</li>
+            <li>Vue sur rivière ou étang</li>
+            <li>Boulodrome</li>
         </ul>
         <ul class="list_op">
-            <li>mini golf</li>
-            <li>bar</li>
-            <li>restaurant</li>
+            <li>Mini golf</li>
+            <li>Bar</li>
+            <li>Restaurant</li>
         </ul>
     </div>
 </main>

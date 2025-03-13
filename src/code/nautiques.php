@@ -27,7 +27,7 @@
             <img src="../assets/img/canoe6.jpg" alt="">
             <p>Toute l'année la pêche bat son plein au Domaine Saône-Valley<br>Cartes de pêche en vente sur place</p>
             <ul class="-card2">
-                <li>84.00€ : Anuelle</li>
+                <li>84.00€ : anuelle</li>
                 <li>35.00€ : hebdomadaire</li>
                 <li>11.70€ : journalière</li>
             </ul>
@@ -58,7 +58,7 @@
             <img src="../assets/img/gbateau.jpg" alt="">
             <p>Toute l'année la pêche bat son plein au Domaine Saône-Valley<br>Cartes de pêche en vente sur place</p>
             <ul class="-card2">
-                <li>84.00€ : Anuelle</li>
+                <li>84.00€ : anuelle</li>
                 <li>35.00€ : hebdomadaire</li>
                 <li>11.70€ : journalière</li>
             </ul>

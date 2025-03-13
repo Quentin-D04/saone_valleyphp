@@ -3,7 +3,6 @@ session_start();
 include 'header.php';
 include 'bdd.php';
 
-
 if (isset($_SESSION["admin"])) {
     if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['valid'])) {
         $nom = trim($_POST['nom']);
@@ -16,7 +15,6 @@ if (isset($_SESSION["admin"])) {
         $allowedFileTypes = ["jpg", "jpeg", "png", "avif"];
         $errors = [];
         $images = [];
-
 
         function uploadImage($file, $target_dir, $maxFileSize, $allowedFileTypes)
         {
@@ -38,7 +36,6 @@ if (isset($_SESSION["admin"])) {
             }
         }
 
-
         foreach (['image0', 'image1', 'image2', 'image3', 'image4', 'image5', 'image6'] as $key) {
             if (isset($_FILES[$key])) {
                 $uploadedImage = uploadImage($_FILES[$key], $target_dir, $maxFileSize, $allowedFileTypes);
@@ -53,9 +50,9 @@ if (isset($_SESSION["admin"])) {
         }
 
         $checkQuery = "SELECT COUNT(*) FROM chalets WHERE nom = :nom";
-        $stmtCheck = $mysqlClient->prepare($checkQuery);
-        $stmtCheck->execute([':nom' => $nom]);
-        $chaletExists = $stmtCheck->fetchColumn();
+        $reqsqlCheck = $mysqlClient->prepare($checkQuery);
+        $reqsqlCheck->execute([':nom' => $nom]);
+        $chaletExists = $reqsqlCheck->fetchColumn();
 
         if ($chaletExists > 0) {
             echo "<p style='color:red;'>Un chalet avec ce nom existe déjà.</p>";
@@ -94,11 +91,10 @@ if (isset($_SESSION["admin"])) {
     }
 }
 
-
 $query = "SELECT * FROM chalets";
-$stmt = $mysqlClient->prepare($query);
-$stmt->execute();
-$chalets = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$reqsql = $mysqlClient->prepare($query);
+$reqsql->execute();
+$chalets = $reqsql->fetchAll(PDO::FETCH_ASSOC);
 
 if ($chalets) {
     foreach ($chalets as $index => $chalet) {
@@ -140,7 +136,6 @@ if ($chalets) {
     }
 }
 
-
 if (isset($_SESSION["admin"])) {
     echo '<div class="forms">
     <div class ="titre_form">
@@ -153,9 +148,9 @@ if (isset($_SESSION["admin"])) {
         Image1:* <input type="file" name="image1" required><br><br>
         Image2:* <input type="file" name="image2"><br><br>
         Image3:* <input type="file" name="image3"><br><br>
-        Image4: <input type="file" name="image4"><br><br>
-        Image5: <input type="file" name="image5"><br><br>
-        Image6: <input type="file" name="image6"><br><br>
+        Image4:* <input type="file" name="image4"><br><br>
+        Image5:* <input type="file" name="image5"><br><br>
+        Image6:* <input type="file" name="image6"><br><br>
         Description: <textarea name="description" rows="5" cols="33" placeholder="1 lit double, wifi..." required></textarea><br><br>
         <input type="submit" name="valid" value="Envoyer">
         <a href="../admin/dashboard.php">Annuler</a>
@@ -170,10 +165,9 @@ if (isset($_SESSION["admin"])) {
         <select name="nom" required>
             <option value="">Sélectionnez un chalet</option>';
 
-    // Récupérer la liste des chalets depuis la base de données
     try {
-        $stmt = $mysqlClient->query("SELECT nom FROM chalets ORDER BY nom ASC");
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $reqsql = $mysqlClient->query("SELECT nom FROM chalets ORDER BY nom ASC");
+        while ($row = $reqsql->fetch(PDO::FETCH_ASSOC)) {
             echo '<option value="' . htmlspecialchars($row['nom']) . '">' . htmlspecialchars($row['nom']) . '</option>';
         }
     } catch (PDOException $e) {
@@ -192,22 +186,19 @@ if (isset($_SESSION["admin"])) {
 
         if (!empty($nom)) {
             try {
-                // Récupération des images pour suppression des fichiers
-                $stmtImages = $mysqlClient->prepare("SELECT image0, image1, image2, image3, image4, image5, image6 FROM chalets WHERE nom = :nom");
-                $stmtImages->execute([':nom' => $nom]);
-                $images = $stmtImages->fetch(PDO::FETCH_ASSOC);
+                $reqsqlImages = $mysqlClient->prepare("SELECT image0, image1, image2, image3, image4, image5, image6 FROM chalets WHERE nom = :nom");
+                $reqsqlImages->execute([':nom' => $nom]);
+                $images = $reqsqlImages->fetch(PDO::FETCH_ASSOC);
 
-                // Suppression des fichiers image
                 foreach ($images as $image) {
                     if ($image && file_exists("../img_chalets/" . $image)) {
                         unlink("../img_chalets/" . $image);
                     }
                 }
 
-                // Suppression du chalet dans la base
                 $deleteQuery = "DELETE FROM chalets WHERE nom = :nom";
-                $stmtDelete = $mysqlClient->prepare($deleteQuery);
-                $stmtDelete->execute([':nom' => $nom]);
+                $reqsqlDelete = $mysqlClient->prepare($deleteQuery);
+                $reqsqlDelete->execute([':nom' => $nom]);
 
                 echo "<p style='color:green;'>Le chalet a été supprimé avec succès.</p>";
 
